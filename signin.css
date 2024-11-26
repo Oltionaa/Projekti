@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color:  #beab8e;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+form .input-field{
+    position: relative;
+    height: 55px;
+    width: 100%;
+}
+
+.input-field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+
+
+.button{
+    border-radius: 15px;
+	background-color: rgb(54, 34, 9);
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.button input{
+    color: white;
+    font-size: 13px;
+	font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
