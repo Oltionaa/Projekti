@@ -14,27 +14,27 @@ body {
   background-color: rgba(0, 0, 0, 0.7); 
 }
   
-  .navbar .Logo {
-    margin-right: auto;
-  }
+.navbar .Logo {
+  margin-right: auto;
+}
   
-  .navbar .Logo img {
+.navbar .Logo img {
   height: 100px;
   padding: 2px;
-  }
+}
   
-  .navbar a {
+.navbar a {
   color: white;
   padding: 10px;
   text-decoration: none;
   font-size: 25px;
   transition: background-color 0.3s ease;
-  }
+}
   
-  .navbar a:hover {
+.navbar a:hover {
   background-color: rgba(87, 103, 108, 0.925);
-  }
-  .container {
+}
+.container {
   width: 90%;
   max-width: 1200px;
   display: flex;
@@ -43,13 +43,13 @@ body {
   position: relative;
   margin: 0 auto;
   margin-bottom: 25%;
-  }
-  .left-section {
-    color: white;
-    flex: 1; 
-    padding: 30px;
-    text-align: center;
-  }
+}
+.left-section {
+  color: white;
+  flex: 1; 
+  padding: 30px;
+  text-align: center;
+}
   
   .left-section h1 {
   font-size: 3em;
@@ -58,12 +58,12 @@ body {
   line-height: 1.2;
   }
   
-  .left-section p {
+.left-section p {
   font-size: 1.2em;
   margin-bottom: 20px;
   opacity: 0.8;
-  }
-  .button {
+}
+.button {
   text-decoration: none;
   display: inline-block; 
   background-color: #e09c12; 
@@ -76,9 +76,9 @@ body {
   border: none; 
   cursor: pointer; 
   transition: background-color 0.3s ease;
-  }
+}
   
-  .button:hover {
-    background-color: #bd7e12; 
-  }
+.button:hover {
+  background-color: #bd7e12; 
+}
   
