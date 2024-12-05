@@ -1,51 +1,120 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In and Registration Form</title>
     <link rel="stylesheet" href="signin.css"/>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-        <div class = "form-box">
+        <div class="form-box">
             <h1 id="title">Sign Up</h1>
-            <form action="#">
-                <div class = "field">
-                <div class="input-field name-field">
-                    <div class="input-field">
-                    <input type = "text" placeholder="Name" class="name"/>
-                </div>
-                    
+            <form id="signup-form" action="signup-form" method="POST">
+                <div class="field">
+                    <div class="input-field name-field">
+                        <input type="text" id="name" placeholder="Name" class="name" />
+                    </div>
                 </div>
                 <br>
                 <div class="field email-field">
-                <div class="input-field">
-                    <input type = "email" placeholder="Email" class="email"/>
-                                </div>
-                                <br>
-                                <div class="field confirm-password">
-                                <div class="input-field">
-                                    <input type = "password" placeholder="Confirm Password" class="cPassword" />
-                                
-                                </div>
-                                <br>
-                                <p>Forgot Password? <a href = "#">Click Here!</a></p>
-                                <br>
-                                <div class ="button">
-                                    <input type="submit" value="Sign Up" />
-                                </div>
-                                <br>
-                                <br>
-                                <p>Already have an Account?</p>
-                                <br>
-                                <div class="btn">
-                                <button onclick = "window.location.href='login.html';">Log In</button>
-                            </form>
-                        </div>
+                    <div class="input-field">
+                        <input type="email" id="email" placeholder="Email" class="email" />
                     </div>
-                <script>
+                </div>
+                <br>
+                <div class="field confirm-password">
+                    <div class="input-field">
+                        <input type="password" id="password" placeholder="Password" class="password" />
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" class="cPassword" />
+                    </div>
+                </div>
+                <br>
+                <p>Forgot Password? <a href="#">Click Here!</a></p>
+                <br>
+                <div class="button">
+                    <input type="submit" id="submit-btn" value="Sign Up" />
+                </div>
+                <br><br>
+                <p>Already have an Account?</p>
+                <br>
+                <div class="btn">
+                    <button onclick="window.location.href='login.html';">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const BtnSubmit = document.getElementById('submit-btn');
+            const signupForm = document.getElementById("signup-form");
+            const nameField = document.getElementById("name");
+            const emailField = document.getElementById("email");
+            const passwordField = document.getElementById("password");
+            const confirmPasswordField = document.getElementById("confirm-password");
+
+            const validate = (ngjarja) => {
+                ngjarja.preventDefault(); 
+
+                if (nameField.value === "") {
+                    alert("Ju lutem shtoni emrin.");
+                    nameField.focus();
+                    return false;
+                }
+
+              
+                if (emailField.value === "") {
+                    alert("Ju lutem shtoni email-in.");
+                    emailField.focus();
+                    return false;
+                }
+                if (!emailValid(emailField.value)) {
+                    alert("Ju lutem shtoni një email të vlefshëm.");
+                    emailField.focus();
+                    return false;
+                }
+
+                
+                if (passwordField.value === "") {
+                    alert("Ju lutem shtoni fjalëkalimin.");
+                    passwordField.focus();
+                    return false;
+                }
+                if (!passwordValid(passwordField.value)) {
+                    alert("Fjalëkalimi duhet të ketë mes 4 dhe 8 karaktere, të përmbajë të paktën një shkronjë, një numër dhe një simbol.");
+                    passwordField.focus();
+                    return false;
+                }
+
+                
+                if (passwordField.value !== confirmPasswordField.value) {
+                    alert("Fjalëkalimi dhe konfirmimi i fjalëkalimit nuk përputhen.");
+                    confirmPasswordField.focus();
+                    return false;
+                }
+
+                
+                alert("Forma u plotësua me sukses!");
+                signupForm.submit(); 
+            };
+
+           
+            const emailValid = (email) => {
+                const emailRegex = /^([A-Za-z0-9_\-.]+)@[A-Za-z0-9\-]+\.[a-z]{2,4}$/;
+                return emailRegex.test(email.toLowerCase());
+            };
+
+            const passwordValid = (password) => {
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{4,8}$/;
+                return passwordRegex.test(password);
+            };
+
+            BtnSubmit.addEventListener('click', validate);
+        });
+    </script>
+</body>
+</html>
