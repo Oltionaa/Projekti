@@ -14,36 +14,42 @@
             <form id="signup-form" action="signup-form" method="POST">
                 <div class="field">
                     <div class="input-field name-field">
-                        <input type="text" id="name" placeholder="Name" class="name" />
+                        <input type="text" id="name" placeholder="Name" class="name" required />
                     </div>
                 </div>
                 <br>
+            
                 <div class="field email-field">
                     <div class="input-field">
-                        <input type="email" id="email" placeholder="Email" class="email" />
+                        <input type="email" id="email" placeholder="Email" class="email" required />
                     </div>
                 </div>
                 <br>
+            
                 <div class="field confirm-password">
                     <div class="input-field">
-                        <input type="password" id="password" placeholder="Password" class="password" />
+                        <input type="password" id="password" placeholder="Password" class="password" required />
                     </div>
                     <div class="input-field">
-                        <input type="password" id="confirm-password" placeholder="Confirm Password" class="cPassword" />
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" class="cPassword" required />
                     </div>
                 </div>
                 <br>
+            
                 <p>Forgot Password? <a href="#">Click Here!</a></p>
                 <br>
+            
                 <div class="button">
                     <input type="submit" id="submit-btn" value="Sign Up" />
                 </div>
                 <br><br>
+            
                 <p>Already have an Account?</p>
                 <br>
-                <div class="btn">
-                    <button onclick="window.location.href='login.html';">Log In</button>
-                </div>
+                <a href="login.html" class="button">Log In</a>
+            </form>
+            
+                </a>
             </form>
         </div>
     </div>
@@ -98,7 +104,7 @@
                 }
 
                 
-                alert("Forma u plotësua me sukses!");
+                alert("Sign in me sukses!");
                 signupForm.submit(); 
             };
 
