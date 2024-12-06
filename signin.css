@@ -25,22 +25,49 @@ form .input-field{
     outline: none;
 }
 
-
-.button{
-    border-radius: 15px;
-	background-color: rgb(54, 34, 9);
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+.field {
+    margin-bottom: 15px;
 }
+
+.input-field {
+    width: 100%;
+    margin: 5px 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.button, .button input {
+    display: inline-block;
+    width: 100%; 
+    border-radius: 25px;
+    background-color: rgb(54, 34, 9);
+    padding: 15px 0;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .button input{
     color: white;
     font-size: 13px;
-	font-weight: bold;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.3 ease;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .button input:hover{
@@ -110,12 +137,3 @@ form p a{
     color: rgba(54, 34, 9);
 }
 
-.btn{
-    border-radius: 15px;
-    color: white;
-	background-color: rgb(54, 34, 9);
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
