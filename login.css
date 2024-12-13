@@ -123,3 +123,74 @@ form p a{
     gap: 10px; 
     margin-top: 10px;
 }
+
+/* Për ekrane të mëdha (Desktop) */
+@media (min-width: 1024px) {
+    .form-box {
+        max-width: 500px;
+        padding: 60px 70px 80px;
+    }
+
+    .form-box h1 {
+        font-size: 2em;
+    }
+
+    .button {
+        padding: 14px 50px;
+    }
+
+    form p {
+        font-size: 16px;
+    }
+}
+
+/* Për ekrane të mesme (Tableta) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .form-box {
+        max-width: 450px;
+        padding: 50px 60px;
+    }
+
+    .form-box h1 {
+        font-size: 1.8em;
+    }
+
+    .button {
+        padding: 12px 40px;
+    }
+
+    form p {
+        font-size: 15px;
+    }
+}
+
+/* Për ekrane të vogla (Telefona) */
+@media (max-width: 767px) {
+    .form-box {
+        width: 95%;
+        padding: 40px 20px 50px;
+    }
+
+    .form-box h1 {
+        font-size: 1.5em;
+    }
+
+    .input-field {
+        height: 50px;
+    }
+
+    .button {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+
+    form p {
+        font-size: 14px;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
