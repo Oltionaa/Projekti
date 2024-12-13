@@ -1,39 +1,41 @@
 body {
   background-image: url('1.jpg');
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
+
 .navbar {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.7);
 }
-  
+
 .navbar .Logo {
   margin-right: auto;
 }
-  
+
 .navbar .Logo img {
-  height: 100px;
+  height: 80px; 
   padding: 2px;
 }
-  
+
 .navbar a {
   color: white;
   padding: 10px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   transition: background-color 0.3s ease;
 }
-  
+
 .navbar a:hover {
   background-color: rgba(87, 103, 108, 0.925);
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -44,41 +46,99 @@ body {
   margin: 0 auto;
   margin-bottom: 25%;
 }
+
 .left-section {
   color: white;
-  flex: 1; 
+  flex: 1;
   padding: 30px;
   text-align: center;
 }
-  
-  .left-section h1 {
+
+.left-section h1 {
   font-size: 3em;
   font-weight: bold;
   margin-bottom: 10px;
   line-height: 1.2;
-  }
-  
+}
+
 .left-section p {
   font-size: 1.2em;
   margin-bottom: 20px;
   opacity: 0.8;
 }
+
 .button {
   text-decoration: none;
-  display: inline-block; 
-  background-color: #e09c12; 
-  color: rgb(17, 6, 6); 
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  font-size: 16px; 
-  font-weight: bold; 
-  text-align: center; 
-  border: none; 
-  cursor: pointer; 
+  display: inline-block;
+  background-color: #e09c12;
+  color: rgb(17, 6, 6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
-  
+
 .button:hover {
-  background-color: #bd7e12; 
+  background-color: #bd7e12;
 }
-  
+
+
+/* Per ekrane me te mdhaja */
+@media (min-width: 1024px) {
+  .left-section h1 {
+    font-size: 3em;
+  }
+  .left-section p {
+    font-size: 1.5em;
+  }
+}
+
+/* per tableta*/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar .Logo img {
+    height: 60px;
+  }
+  .navbar a {
+    font-size: 18px;
+  }
+  .left-section h1 {
+    font-size: 2.5em;
+  }
+  .left-section p {
+    font-size: 1.2em;
+  }
+}
+
+/* Per telefona te vogel */
+@media (max-width: 767px) {
+  .navbar {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .navbar .Logo img {
+    height: 50px;
+  }
+  .navbar a {
+    font-size: 16px;
+    padding: 5px;
+  }
+  .container {
+    flex-direction: column; 
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  .left-section h1 {
+    font-size: 2em;
+  }
+  .left-section p {
+    font-size: 1em;
+  }
+  .button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
