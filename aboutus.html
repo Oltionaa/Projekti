@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Boundless Travel</title>
-    <link rel="stylesheet" href="Aboutus.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Captions</title>
+  <link rel="stylesheet" href="Aboutus.css">
+
 </head>
-
 <body>
-
-    <div class="container">
-       
-        <div class="section section-top">
-            <img src="photo2.jpg" alt="photo">
-            <h2>Who We Are<br></h2>
-            <p>We are your travel guides, covering essential information for travelers to explore a destination confidently. Our commitment extends 24/7 assistance to make your trip easier.`</p>
-        </div>
-
-        <div class="section section-bottom">
-            <h2>About Us<br></h2>
-            <p>. We specialize in offering personalized travel experiences, from relaxing beach vacations to adventurous city tours. Our team handles all the details, so you can focus on enjoying your journey.</p>
-
-            <img src="photo3.jpg" alt="Underwater Image">
-        </div>
+  <div class="gallery-container">
+    <button class="scroll-btn prev" onclick="prevImg()">&#10094;</button>
+    <div class="gallery">
+      <div class="image-card">
+        <img id="img1" src="foto1.jpg" alt="1">
+        <div class="caption" id="caption1">Kelingking Beach</div>
+      </div>
+      <div class="image-card">
+        <img id="img2" src="foto2.png" alt="2">
+        <div class="caption" id="caption2">Cappadocia</div>
+      </div>
+      <div class="image-card">
+        <img id="img3" src="foto3.jpg" alt="3">
+        <div class="caption" id="caption3">London</div>
+      </div>
     </div>
+    <button class="scroll-btn next" onclick="nextImg()">&#10095;</button>
+  </div>
 
-    <div class="class">
-        <img src="photo4.jpg" alt="Underwater Image">
-        <h2>Discover<br></h2>
-        <p>Discover the world and make  new experiences  with special prices </p>
-    </div>
-</div>
-
-</body>
-</html>
+  </body>
+  </html>
     
