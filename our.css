@@ -83,15 +83,14 @@
     line-height: 1.5;
 }
 
-
 .card-button {
     display: inline-block;
     margin-top: 10px; 
-    padding: 10px 20px; 
-    background-color: #624a1c; 
+    padding: 10px 20px;
+    background-color: #624a1c;
     color: #fff; 
     text-decoration: none; 
-    border-radius: 5px;
+    border-radius: 5px; 
     font-size: 16px; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
     text-align: center;
