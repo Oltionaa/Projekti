@@ -7,6 +7,7 @@
     width: 100%;
     height: 100vh;
 }
+
 .section-title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -24,7 +25,7 @@
     text-align: center;
 }
 
-.cards-row {
+.tour-cards-row {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -34,7 +35,7 @@
     border-radius: 10px;
 }
 
-.card {
+.tour-card {
     width: 250px;
     text-align: center;
     flex-shrink: 0;
@@ -45,11 +46,11 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
+.tour-card:hover {
     transform: scale(1.05); 
 }
 
-.card-image {
+.tour-card-image {
     width: 100%;
     height: 200px;
     border-radius: 50%;
@@ -58,45 +59,44 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-image img {
+.tour-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.card-image:hover img {
+.tour-card-image:hover img {
     transform: scale(1.1); 
 }
 
-.card-title {
+.tour-card-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 15px;
     color: #333;
 }
 
-.card-details {
+.tour-card-details {
     font-size: 1rem;
     color: #555;
     margin-top: 10px;
     line-height: 1.5;
 }
 
-
-.card-button {
+.tour-card-button {
     display: inline-block;
     margin-top: 10px; 
-    padding: 10px 20px; 
-    background-color: #624a1c; 
+    padding: 10px 20px;
+    background-color: #624a1c;
     color: #fff; 
     text-decoration: none; 
-    border-radius: 5px;
+    border-radius: 5px; 
     font-size: 16px; 
     transition: background-color 0.3s ease, transform 0.2s ease; 
     text-align: center;
 }
 
-.card-button:hover {
+.tour-card-button:hover {
     background-color: rgb(71, 43, 9); 
 }
