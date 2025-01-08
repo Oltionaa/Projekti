@@ -11,49 +11,47 @@
     <div class="container">
         <div class="form-box">
             <h1 id="title">Sign Up</h1>
-            <form id="signup-form" action="signup-form" method="POST">
+            <form id="signup-form" action="signin.php" method="POST">
                 <div class="field">
                     <div class="input-field name-field">
-                        <input type="text" id="name" placeholder="Name" class="name" required />
+                        <input type="text" name="name" id="name" placeholder="Name" required />
                     </div>
                 </div>
                 <br>
-            
+
                 <div class="field email-field">
                     <div class="input-field">
-                        <input type="email" id="email" placeholder="Email" class="email" required />
+                        <input type="email" name="email" id="email" placeholder="Email" required />
                     </div>
                 </div>
                 <br>
-            
+
                 <div class="field confirm-password">
                     <div class="input-field">
-                        <input type="password" id="password" placeholder="Password" class="password" required />
+                        <input type="password" name="password" id="password" placeholder="Password" required />
                     </div>
                     <div class="input-field">
-                        <input type="password" id="confirm-password" placeholder="Confirm Password" class="cPassword" required />
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required />
                     </div>
                 </div>
                 <br>
-            
+
                 <p>Forgot Password? <a href="#">Click Here!</a></p>
                 <br>
-            
+
                 <div class="button">
-                    <input type="submit" id="submit-btn" value="Sign Up" />
+                    <input type="submit" name="submit" id="submit-btn" value="Sign Up" />
                 </div>
                 <br><br>
-            
+
                 <p>Already have an Account?</p>
                 <br>
                 <a href="login.html" class="button">Log In</a>
             </form>
-            
-                </a>
-            </form>
+
         </div>
     </div>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -105,9 +103,9 @@
 
                 
                 alert("Sign in me sukses!");
-                signupForm.submit(); 
+                signupForm.submit();
+                window.location.href = "offers.html";
             };
-
            
             const emailValid = (email) => {
                 const emailRegex = /^([A-Za-z0-9_\-.]+)@[A-Za-z0-9\-]+\.[a-z]{2,4}$/;
