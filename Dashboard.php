@@ -19,7 +19,7 @@
             echo "<a href='logout.php'>Logout</a>";
         } else {
             // Redirect to login if session does not exist
-            header('Location: login.php');
+            header('Location: login.html');
             exit();
         }
         ?>

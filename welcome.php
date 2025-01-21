@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$Name = 'admin';
-$Password = 'admin123';
+$Name = '';
+$Password = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Clean input values
@@ -18,6 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Perdoruesi ose fjalkalimi eshte i gabuar!";
     }
 } else {
-    header('Location: login.php'); // Redirect to the login page if no POST data
+    header('Location: login.html'); // Redirect to the login page if no POST data
     exit();
 }
