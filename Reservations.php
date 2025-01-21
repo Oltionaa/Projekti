@@ -46,21 +46,7 @@ if ($conn->connect_error) {
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Statusi = $_POST['Statusi'];
-    $Destinacioni = $_POST['Destinacioni'];
-    
 
-    // Deklaratë e përgatitur për futjen e të dhënave
-    $stmt = $conn->prepare("INSERT INTO bookings (Statusi, Destinacioni) VALUES (?, ?)");
-    $stmt->bind_param("ss", $Statusi, $Destinacioni);
-
-    if ($stmt->execute()) {
-        echo "Rezervimi u shtua me sukses! <a href='lista_tabelave.php'>Shiko Rezervimin</a>";
-    } else {
-        echo "Gabim: " . $stmt->error;
-    }
-}
 // Kontrollo nëse të dhënat janë dërguar me POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Statusi = $_POST['Statusi'];

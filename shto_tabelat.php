@@ -36,23 +36,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-    <meta charset="UTF-8">
-    <title>Shto Rezervimin</title>
-</head>
-<body>
-    <h2>Shto një rezervim të ri</h2>
-    <form method="POST" action="shto_tabelat.php">
-        <label for="Statusi">Statusi:</label>
-        <input type="text" name="Statusi" id="Statusi" required><br><br>
-
-        <label for="Destinacioni">Destinacioni:</label>
-        <input type="text" name="Destinacioni" id="Destinacioni" required><br><br>
-
-
-        <button type="submit">Shto Rezervimin</button>
-    </form>
-</body>
-</html>
