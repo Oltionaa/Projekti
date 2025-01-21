@@ -1,3 +1,29 @@
+<?php
+session_start();
+include_once 'Database.php';
+include_once 'User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+
+    if ($user->login($name, $password)) {$_SESSION['name'] = $name;
+        header("Location: home.html");
+        exit;
+    } else {
+        header("Location: signinn.html");
+        exit;
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,18 +40,16 @@
     <div class="container">
         <div class="form-box">
             <h1 id="title">Log In</h1>
-            <form id="login-form" action="welcome.php" method="POST">
-
+            <form id="login-form" action="login.php" method="POST">
                 <div class="field">
                     <div class="input-field name-field">
-                    <input type="text" name="Name" placeholder="Name" required />
+                        <input type="text"  name="name" placeholder="Name" class="name" />
                     </div>
                 </div>
                 <br>
                 <div class="field create-password">
                     <div class="input-field">
-                    
-                    <input type="password" name="Password" placeholder="Password" required />
+                        <input type="password" name="password" placeholder="Password" class="password" />
                     </div>
                 </div>
                 <br>
@@ -42,4 +66,47 @@
             </form>
         </div>
     </div>
+     <script>
+        document.addEventListener("DOMContentLoaded", function (ngjarja) {
+            const BtnSubmit = document.getElementById('submit-btn');
+            const loginForm = document.getElementById("login-form");
+            const nameField = document.querySelector(".name");
+            const passwordField = document.querySelector(".password");
     
+            const validate = (ngjarja) => {
+                ngjarja.preventDefault();
+    
+                if (nameField.value === "") {
+                    alert("Ju lutem shtoni emrin.");
+                    nameField.focus();
+                    return false;
+                }
+
+                if (passwordField.value === "") {
+                    alert("Ju lutem shtoni fjalëkalimin.");
+                    passwordField.focus();
+                    return false;
+                }
+
+                if (!passwordValid(passwordField.value)) {
+                    alert("Fjalëkalimi duhet të ketë të paktën 8 karaktere dhe të përmbajë numra dhe simbole.");
+                    passwordField.focus();
+                    return false;
+                }
+
+                alert("Log in me sukses!");
+                loginForm.submit(); 
+            };
+    
+            
+            const passwordValid = (password) => {
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+                return passwordRegex.test(password); 
+            };
+
+            BtnSubmit.addEventListener('click', validate);
+        });
+    </script>
+</body>
+
+                 
