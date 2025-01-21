@@ -5,14 +5,23 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
-  padding: 0;
-}
+  padding-top: 100px; 
 
+}
 .navbar {
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 8px 20px;
   background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 60px; 
+  transition: height 0.3s, padding 0.3s; 
 }
 
 .navbar .Logo {
@@ -20,22 +29,43 @@ body {
 }
 
 .navbar .Logo img {
-  height: 80px; 
-  padding: 2px;
+  height: 60px; 
 }
 
 .navbar a {
   color: white;
-  padding: 10px;
+  padding: 10px 15px;
   text-decoration: none;
   font-size: 20px;
   transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-  background-color: rgba(87, 103, 108, 0.925);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
+.navbar a:last-child {
+  margin-right: 10px;
+}
+
+body {
+  margin: 0;
+  padding-top: 60px;
+}
+
+
+.navbar.shrink {
+  height: 45px; 
+  padding: 5px 20px; 
+}
+
+.navbar.shrink .Logo img {
+  height: 40px; 
+}
+
+.navbar.shrink a {
+  font-size: 18px; 
+}
 .container {
   width: 90%;
   max-width: 1200px;

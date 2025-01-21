@@ -41,26 +41,25 @@
             </form>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const BtnSubmit = document.getElementById('submit-btn');
             const signupForm = document.getElementById("signup-form");
             const nameField = document.getElementById("name");
             const emailField = document.getElementById("email");
             const passwordField = document.getElementById("password");
             const confirmPasswordField = document.getElementById("confirm-password");
 
-            signupForm.addEventListener("submit", function (ngjarja) {
+            const validate = (ngjarja) => {
                 ngjarja.preventDefault(); 
 
-               
                 if (nameField.value === "") {
                     alert("Ju lutem shtoni emrin.");
                     nameField.focus();
                     return false;
                 }
 
-            
+              
                 if (emailField.value === "") {
                     alert("Ju lutem shtoni email-in.");
                     emailField.focus();
@@ -72,7 +71,7 @@
                     return false;
                 }
 
-               
+                
                 if (passwordField.value === "") {
                     alert("Ju lutem shtoni fjalëkalimin.");
                     passwordField.focus();
@@ -86,25 +85,27 @@
 
                 
                 if (passwordField.value !== confirmPasswordField.value) {
-                    alert("Fjalëkalimi dhe konfirmimi nuk përputhen.");
+                    alert("Fjalëkalimi dhe konfirmimi i fjalëkalimit nuk përputhen.");
                     confirmPasswordField.focus();
                     return false;
                 }
 
-                alert("Regjistrimi është bërë me sukses!"); 
-                signupForm.submit(); 
-            });
-
-
+                
+                alert("Sign in me sukses!");
+                signupForm.submit();
+            };
+           
             const emailValid = (email) => {
                 const emailRegex = /^([A-Za-z0-9_\-.]+)@[A-Za-z0-9\-]+\.[a-z]{2,4}$/;
                 return emailRegex.test(email.toLowerCase());
             };
 
             const passwordValid = (password) => {
-                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+                const passwordRegex =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
                 return passwordRegex.test(password);
             };
+
+            BtnSubmit.addEventListener('click', validate);
         });
     </script>
 </body>

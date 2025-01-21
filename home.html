@@ -321,7 +321,18 @@
  </section>
  
     </footer>
-
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector(".navbar");
+    
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) { // Përdoruesi ka bërë scroll 100px ose më shumë
+            navbar.classList.add("shrink");
+          } else {
+            navbar.classList.remove("shrink");
+          }
+        });
+      });
+    </script>
 </body>
 </html>
