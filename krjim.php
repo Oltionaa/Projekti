@@ -31,5 +31,20 @@ if ($conn->query($sql) === TRUE) {
     echo "Gabim gjatë krijimit të tabelës: " . $conn->error;
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS Rezervimi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Emri VARCHAR(255) NOT NULL,
+    Mbiemri VARCHAR(255) NOT NULL,
+    Destinacioni VARCHAR(255) NOT NULL,
+    
+   
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Tabela 'Rezervimi' u krijua me sukses!<br>";
+} else {
+    echo "Gabim gjatë krijimit të tabelës 'Rezervimi': " . $conn->error . "<br>";
+}
+
 $conn->close();
 ?>

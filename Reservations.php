@@ -34,7 +34,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "boundlesstravel";
+$dbname = "projekti";
 
 // Krijo lidhjen
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -49,13 +49,14 @@ if ($conn->connect_error) {
 
 // Kontrollo nëse të dhënat janë dërguar me POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Statusi = $_POST['Statusi'];
+    $Emri = $_POST['Emri'];
+    $Mbiemri = $_POST['Mbiemri'];
     $Destinacioni = $_POST['Destinacioni'];
     
 
     // Deklaratë e përgatitur për futjen e të dhënave
-    $stmt = $conn->prepare("INSERT INTO Rezervimi (Statusi, Destinacioni) VALUES (?, ?)");
-    $stmt->bind_param("ss", $Statusi, $Destinacioni);
+    $stmt = $conn->prepare("INSERT INTO Rezervimi (Emri,Mbiemri, Destinacioni) VALUES (?, ?,?)");
+    $stmt->bind_param("sss", $Emri, $Mbiemri,$Destinacioni);
 
     if ($stmt->execute()) {
         echo "Rezervimi u shtua me sukses! <a href='lista_tabelave.php'>Shiko Rezervimin</a>";
@@ -79,8 +80,12 @@ $conn->close();
 <body>
     <h2>Shto një rezervim të ri</h2>
     <form method="POST" action="Reservations.php">
-        <label for="Statusi">Statusi:</label>
-        <input type="text" name="Statusi" id="Statusi" required><br><br>
+        <label for="Statusi">Emri:</label>
+        <input type="text" name="Emri" id="Emri" required><br><br>
+
+
+        <label for="Statusi">Mbiemri:</label>
+        <input type="text" name="Mbiemri" id="Mbiemri" required><br><br>
 
         <label for="Destinacioni">Destinacioni:</label>
         <input type="text" name="Destinacioni" id="Destinacioni" required><br><br>
