@@ -64,17 +64,22 @@ body {
     text-align: center;
 }
 .card-button {
-    display: block;
+    width: 100%; 
+    display: inline-block;
     text-align: center;
     padding: 10px 20px;
-    background-color:rgb(50, 101, 178);
+    background-color: rgb(50, 101, 178);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+    
 }
+
 .card-button:hover {
     background-color: #184663;
     transform: scale(1.05);
 }
+

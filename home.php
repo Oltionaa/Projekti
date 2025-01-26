@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
@@ -43,7 +48,7 @@
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="city-tour.html" class="tour-card-button">Explore</a> 
+          <a href="city.html" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
@@ -54,7 +59,7 @@
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="museum-tour.html" class="tour-card-button">Explore</a> 
+          <a href="museumtour.html" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
@@ -70,24 +75,27 @@
         </div>
       </div> 
     </div>
-  
     <div class="section-container-s">
-      <h1>Exclusive Offers Just for You</h1>
+  <h1>Exclusive Offers Just for You</h1>
   <div class="cards-container">
     <div class="card">
       <div class="card-image">
-        <img src="ksamil-beach.jpg" alt="Ksamil">
+        <img src="ksamil-beach.jpg" alt="Ksamil Beach">
       </div>
       <div class="card-content">
-        <h3 class="card-title">Ksamil beach</h3>
+        <h3 class="card-title">Ksamil Beach</h3>
         <p class="card-description">Exclusive Offer!
-            Book your exclusive package now and enjoy flights and accommodation for an unforgettable trip. The package includes:
-            Flight tickets
-            Luxury hotel accommodation
-            Selected transfers and activities
-            Dont miss this amazing opportunity .</p>
+        Book your exclusive package now and enjoy flights and accommodation for an unforgettable trip. The package includes:
+        Flight tickets
+        Luxury hotel accommodation
+        Selected transfers and activities
+        Dont miss this amazing opportunity .</p>
         <div class="card-price">$70</div>
-        <a href="signin.html"class="card-button">Book Now</a>
+        <form action="saverezervimi.php" method="POST">
+        <input type="hidden" name="package_name" value="Ksamil Beach">
+       <input type="hidden" name="price" value="70">
+        <button type="submit" class="card-button">Book Now</button>
+        </form>
       </div>
     </div>
     <div class="card">
@@ -105,7 +113,11 @@
             Unlimited drinks and activities
             Special excursions and events included</p>
           <div class="card-price">$80</div>
-          <a href="signin.html"class="card-button">Book Now</a>
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Bora Bora">
+            <input type="hidden" name="price" value="80">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
 
@@ -123,8 +135,12 @@
             Access to daily entertainment and activities
             Guided tours and special excursions
             Book now and experience the luxury of a stress-free vacation!</p>
-          <div class="card-price">$90</div>
-          <a href="signin.html"class="card-button">Book Now</a>
+          <div class="card-price">$90</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Nice">
+            <input type="hidden" name="price" value="90">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
         </div>
       <div class="card">
@@ -139,8 +155,12 @@
             Access to resort amenities (spa, pools, etc.)
             Fun-filled activities for all ages
             Reserve your spot today and enjoy a luxurious.</p>
-          <div class="card-price">$80</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$80</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Santorini">
+            <input type="hidden" name="price" value="80">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
         
@@ -157,8 +177,13 @@
             Flexible options for changes and cancellations
             Book now and secure your spot for your next trip!
             Get your ticket and fly with ease!</p>
-          <div class="card-price">$100</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$100</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Paris">
+            <input type="hidden" name="price" value="100">
+          
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -174,8 +199,13 @@
             Easy booking and flexible travel options
             Reserve today and start planning your next adventure!
             Book now and fly to your dream destination!</p>
-          <div class="card-price">$120</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$120</div> 
+            <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Budapesti">
+            <input type="hidden" name="price" value="120">
+          
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -193,7 +223,12 @@
             In-flight meals and entertainment included
             Book now and enjoy a stress-free travel experience from start to finish!</p>
           <div class="card-price">$150</div>
-          <a href="signin.html"class="card-button">Book Now</a>
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Vinnea">
+            <input type="hidden" name="price" value="150">
+          
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -212,8 +247,13 @@
             Flexible booking with change and cancellation options
             Airport transfers and lounge access
             Book today and enjoy a seamless, all-inclusive journey from takeoff to landing!</p>
-          <div class="card-price">$135</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$135</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Rome">
+            <input type="hidden" name="price" value="135">
+          
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -229,8 +269,12 @@
             Flexible change and cancellation options
             Airport transfers and access to lounges
             Book today and experience a worry-free, all-inclusive holiday from flights to accommodation!</p>
-          <div class="card-price">$140</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$140</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Amsterdam">
+            <input type="hidden" name="price" value="140">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -248,7 +292,11 @@
             In-room amenities and free Wi-Fi
             Don’t miss out on this perfect all-in-one vacation package book now!</p>
           <div class="card-price">$180</div>
-          <a href="signin.html"class="card-button">Book Now</a>
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Prague">
+            <input type="hidden" name="price" value="180">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -265,8 +313,12 @@
             Flexible booking options
             Airport transfers included
             Book today and have a stress-free vacation!</p>
-          <div class="card-price">$190</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$190</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Barcelona">
+            <input type="hidden" name="price" value="190">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
         </div>
       </div>
        
@@ -284,8 +336,13 @@
             Easy booking with flexible options
             Airport transfers included
             Book now for a hassle-free holiday!</p>
-          <div class="card-price">$200</div>
-          <a href="signin.html" class="card-button">Book Now</a>
+          <div class="card-price">$200</div>   
+          <form action="saverezervimi.php" method="POST">
+            <input type="hidden" name="package_name" value="Cappadocia">
+            <input type="hidden" name="price" value="200">
+            <button type="submit" class="card-button">Book Now</button>
+        </form>
+        </form>
         </div>
       </div>
   </div>

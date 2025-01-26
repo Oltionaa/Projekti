@@ -5,13 +5,16 @@
       <div class="cards-container">
         <div class="card">
           <div class="card-image">
-            <img src="C:\xampp\htdocs\Projekti-1\colo.jpg" alt="Pampelonne">
+            <img src="colo.jpg" alt="Pampelonne">
           </div>
           <div class="card-content">
             <h3 class="card-title">Colosseum</h3>
             <p class="card-description">The Colosseum, also known as the Flavian Amphitheatre, is one of the most iconic landmarks of ancient Rome and is located in the heart of Rome, Italy  </p>
             <div class="card-price">$15</div>
-            <a href="signin.html"class="card-button">Book Now</a>
+            <form action="saverezervimi.php" method="POST">
+              <input type="hidden" name="package_name" value="Colosseum">
+              <input type="hidden" name="price" value="15">
+              <button type="submit" class="card-button">Book Now</button>
           </div>
         </div>
         <div class="card">
@@ -21,11 +24,12 @@
             <div class="card-content">
               <h3 class="card-title">The Louvre </h3>
               <p class="card-description">The Louvre in France, officially called the Musée du Louvre, is the world’s largest art museum and a historic monument located in Paris.</p>
-              <div class="card-price">$35</div>
-              <a href="signin.html"class="card-button">Book Now</a>
+              <div class="card-price">$35</div> <form action="saverezervimi.php" method="POST">
+                <input type="hidden" name="package_name" value="The Louvre">
+                <input type="hidden" name="price" value="35">
+                <button type="submit" class="card-button">Book Now</button>
             </div>
           </div>
-    
           <div class="card">
             <div class="card-image">
               <img src="C:\xampp\htdocs\Projekti-1\museumlondon.jpg" alt="London">
@@ -33,19 +37,32 @@
             <div class="card-content">
               <h3 class="card-title">Butterfly Paradise</h3>
               <p class="card-description">
-                The London Butterfly Museum, more accurately known as Butterfly Paradise, is a vibrant butterfly house located at the Natural History Museum in London. </p>
+                The London Butterfly Museum, more accurately known as Butterfly Paradise, is a vibrant butterfly house located at the Natural History Museum in London.
+              </p>
               <div class="card-price">$20</div>
-              <a href="signin.html"class="card-button">Book Now</a>
+              <form action="saverezervimi.php" method="POST">
+                <input type="hidden" name="package_name" value="Butterfly Paradise">
+                <input type="hidden" name="price" value="20">
+                <button type="submit" class="card-button">Book Now</button>
+              </form>
             </div>
-            </div>
+          </div>
+          
           <div class="card">
             <div class="card-image">
-              <img src="C:\xampp\htdocs\Projekti-1\ny.jpg" alt="Ney york">
+              <img src="C:\xampp\htdocs\Projekti-1\ny.jpg" alt="New York">
             </div>
             <div class="card-content">
               <h3 class="card-title">The Metropolitan Museum of Art</h3>
-              <p class="card-description">The Metropolitan Museum of Art in New York City, commonly known as The Met, is one of the largest and most prestigious art museums in the world</p>
+              <p class="card-description">
+                The Metropolitan Museum of Art in New York City, commonly known as The Met, is one of the largest and most prestigious art museums in the world.
+              </p>
               <div class="card-price">$35</div>
-              <a href="signin.html" class="card-button">Book Now</a>
+              <form action="saverezervimi.php" method="POST">
+                <input type="hidden" name="package_name" value="The Metropolitan Museum of Art">
+                <input type="hidden" name="price" value="35">
+                <button type="submit" class="card-button">Book Now</button>
+              </form>
             </div>
           </div>
+          

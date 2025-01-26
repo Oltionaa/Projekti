@@ -4,17 +4,17 @@ include_once 'Database.php';
 include_once 'User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     $db = new Database();
     $connection = $db->getConnection();
     $user = new User($connection);
 
-
     $name = $_POST['name'];
     $password = $_POST['password'];
 
-    if ($user->login($name, $password)) {$_SESSION['name'] = $name;
-        header("Location: home.html");
+    if ($user->login($name, $password)) {
+        $_SESSION['name'] = $name;
+        $_SESSION['user_id'] = $user->getUserId($name);  
+        header("Location: home.php");
         exit;
     } else {
         header("Location: signinn.html");
@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

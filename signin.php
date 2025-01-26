@@ -1,33 +1,33 @@
 <?php
 session_start();
+include 'database.php';  
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['submit'])) {  
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirmPassword = $_POST['confirm-password'];
 
-        if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
-            echo "Të gjitha fushat duhet të plotësohen!";
-            exit;
-        }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-        if ($password !== $confirmPassword) {
-            echo "Fjalëkalimi dhe konfirmimi nuk përputhen!";
-            exit;
-        }
+   
+    $dbConnection = new Database();
+    $conn = $dbConnection->getConnection();
 
-        $_SESSION['name'] = $name;
-        $_SESSION['email'] = $email;
+  
+    $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+    $stmt->bindParam(1, $username, PDO::PARAM_STR);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        echo 'Emri: ' . $name . '<br>';
-        echo 'Email-i: ' . $email . '<br>';
-        echo 'Fjalëkalimi: ' . $password . '<br>';
+    if ($user && password_verify($password, $user['password'])) {
+      
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $username;
 
-        header("Location: login.html"); 
-        exit();
-    } 
+        header('Location: saverezervimi.php');
+        exit;
+    } else {
+        echo "<script>alert('Përdoruesi ose fjalëkalimi është gabim!');</script>";
+    }
 }
 ?>
 

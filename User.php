@@ -1,7 +1,7 @@
 <?php
 class User {
     private $conn;
-    private $table_name = 'userss';
+    private $table_name = 'userss'; 
 
     public function __construct($db) {
         $this->conn = $db;
@@ -9,7 +9,6 @@ class User {
 
     public function register($name, $surname, $email, $password) {
         $query = "INSERT INTO {$this->table_name} (name, surname, email, password) VALUES (:name, :surname, :email, :password)";
-
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':name', $name);
@@ -34,12 +33,27 @@ class User {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row['password'])) {
                 session_start();
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id'] = $row['id'];  
                 $_SESSION['name'] = $row['name'];  
                 return true;
             }
         }
         return false;
     }
+
+
+    public function getUserId() {
+        return $_SESSION['id'] ?? null; 
+    }
+    public function getUserName($user_id) {
+        $query = "SELECT name FROM {$this->table_name} WHERE id = :user_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row['name'] ?? null;  
+    }
 }
+
 ?>
