@@ -16,7 +16,9 @@
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#">Reservations</a></li>
-          
+          <li> <a href='home.html'>Home</a></li>
+          <li> <a href='logout.php'>Logout</a></li>
+         
         </ul>
       </nav>
     </aside>
@@ -78,6 +80,50 @@ $conn->close();
     <title>Shto Rezervimin</title>
 </head>
 <body>
+
+ 
+<table border="1">
+     
+     <tr>
+         <th>ID</th>
+         <th>user_id</th>
+         <th>user_name</th>
+         <th>package_name</th>
+         <th>price</th>
+         <th>reservation_date</th>
+         <th>Edit</th> 
+         <th>Delete</th> 
+     </tr>
+
+     <?php 
+
+     include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
+
+     $userRepository = new UserRepository();
+
+     $users = $userRepository->getAllUsers(); 
+
+
+    
+foreach($users as $user){
+ echo "
+ <tr>
+     <td>{$user['id']}</td> <!-- ID e përdoruesit -->
+     <td>{$user['user_id']}</td> <!-
+     <td>{$user['user_name']}</td> <!-- Fjalëkalimi i përdoruesit -->
+      <td>{$user['package_name']}</td> <!-- Fjalëkalimi i përdoruesit -->
+       <td>{$user['reservation_date']}</td> <!-- Fjalëkalimi i përdoruesit -->
+      
+
+
+     <td><a href='edit.php?id={$user['id']}'>Edit</a></td> <!-- Link për redaktim me ID -->
+     <td><a href='delete.php?id={$user['id']}'>Delete</a></td> <!-- Link për fshirje me ID -->
+ </tr>
+ ";
+}
+
+     ?>
+ </table>
     <h2>Shto një rezervim të ri</h2>
     <form method="POST" action="Reservations.php">
         <label for="Statusi">Emri:</label>
