@@ -1,48 +1,46 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekti";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Lidhja me databazën dështoi: " . $conn->connect_error);
-}
+include_once 'Database.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password'], $_POST['role'])) {
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirm-password'];
-        $role = mysqli_real_escape_string($conn, $_POST['role']);
-        if ($password !== $confirm_password) {
-            die("Fjalëkalimi dhe konfirmimi nuk përputhen!");
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            die("Email i pavlefshëm!");
-        }
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $sql_check_email = "SELECT id FROM userss WHERE email = ?";
-        if ($stmt_check_email = $conn->prepare($sql_check_email)) {
-            $stmt_check_email->bind_param("s", $email);
-            $stmt_check_email->execute();
-            $stmt_check_email->store_result();
-            if ($stmt_check_email->num_rows > 0) {
-                die("Ky email është regjistruar tashmë!");
-            }
-        }
-        $sql = "INSERT INTO userss (name, email, password, role) VALUES (?, ?, ?, ?)";
-        if ($stmt = $conn->prepare($sql)) {
-            $stmt->bind_param("ssss", $name, $email, $hashed_password, $role);
-            if ($stmt->execute()) {
-                echo "Regjistrimi u krye me sukses!";
-                header("Location: dashboard.php");
-                exit();
-            } else {
-                echo "Gabim në regjistrim: " . $stmt->error;
-            }
-            $stmt->close();
-        }
+
+    $db = new Database();
+    $connection = $db->getConnection();
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm-password'];
+    $role = $_POST['role'];
+
+    if ($password !== $confirmPassword) {
+        die("Password dhe Confirm Password nuk përputhen!");
+    }
+
+    $checkEmailQuery = "SELECT id FROM userss WHERE email = :email";
+    $stmt = $connection->prepare($checkEmailQuery);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        die("Ky email është i regjistruar tashmë!");
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO userss (name, email, password, role) VALUES (:name, :email, :password, :role)";
+    $stmt = $connection->prepare($query);
+
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $hashedPassword);
+    $stmt->bindParam(':role', $role);
+
+    try {
+        $stmt->execute();
+        header("Location: login.php"); 
+        exit; 
+    } catch (PDOException $e) {
+        echo "Gabim: " . $e->getMessage();
     }
 }
-$conn->close();
 ?>

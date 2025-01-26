@@ -43,7 +43,7 @@ if (isset($_POST['editBtn'])) {
 </head>
 <body>
     <h3>Edit User</h3>
-    <form action="" method="post">
+    <form action="edit.css" method="post">
    
         <input type="hidden" name="id" value="<?=$user['id']?>"> <br> <br>
         <input type="hidden" name="user_id" value="<?=$user['user_id']?>"> <br> <br>
