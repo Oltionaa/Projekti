@@ -1,3 +1,20 @@
+<?php
+session_start(); 
+
+if (!isset($_SESSION['user_id'])) {
+    die("You must be logged in to view your reservations.");
+}
+
+$user_id = $_SESSION['user_id'];  
+
+include_once 'userRepository.php';  
+
+$userRepository = new UserRepository();
+
+$reservations = $userRepository->getUserReservations($user_id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +25,6 @@
 </head>
 <body>
   <div class="dashboard">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <h3>My Status</h3>
@@ -16,12 +32,13 @@
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#">Reservations</a></li>
-          
+          <li> <a href='home.php'>Home</a></li>
+          <li> <a href='logout.php'>Logout</a></li>
+         
         </ul>
       </nav>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
       <header class="header">
         <h1>Dashboard</h1>
@@ -30,43 +47,20 @@
 
 
       <?php
-// Lidhja me bazën e të dhënave
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "boundlesstravel";
+$dbname = "projekti";
 
-// Krijo lidhjen
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Kontrollo lidhjen
 if ($conn->connect_error) {
     die("Lidhja dështoi: " . $conn->connect_error);
 }
 
 
-
-
-// Kontrollo nëse të dhënat janë dërguar me POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Statusi = $_POST['Statusi'];
-    $Destinacioni = $_POST['Destinacioni'];
-    
-
-    // Deklaratë e përgatitur për futjen e të dhënave
-    $stmt = $conn->prepare("INSERT INTO Rezervimi (Statusi, Destinacioni) VALUES (?, ?)");
-    $stmt->bind_param("ss", $Statusi, $Destinacioni);
-
-    if ($stmt->execute()) {
-        echo "Rezervimi u shtua me sukses! <a href='lista_tabelave.php'>Shiko Rezervimin</a>";
-    } else {
-        echo "Gabim: " . $stmt->error;
-    }
-
-    $stmt->close();
-}
-
-// Mbyll lidhjen
 $conn->close();
 ?>
 
@@ -77,18 +71,48 @@ $conn->close();
     <title>Shto Rezervimin</title>
 </head>
 <body>
-    <h2>Shto një rezervim të ri</h2>
-    <form method="POST" action="Reservations.php">
-        <label for="Statusi">Statusi:</label>
-        <input type="text" name="Statusi" id="Statusi" required><br><br>
 
-        <label for="Destinacioni">Destinacioni:</label>
-        <input type="text" name="Destinacioni" id="Destinacioni" required><br><br>
+ 
+<table border="1">
+     
+     <tr>
+         <th>ID</th>
+         <th>user_id</th>
+         <th>user_name</th>
+         <th>package_name</th>
+         <th>price</th>
+         <th>reservation_date</th>
+         <th>Edit</th> 
+         <th>Delete</th> 
+     </tr>
+
+     <?php 
+
+     include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
+
+     $userRepository = new UserRepository();
+
+     $reservations = $userRepository->getUserReservations($user_id);  
 
 
-        <button type="submit">Shto Rezervimin</button>
-    </form>
+    
+     foreach($reservations as $reservation){
+      echo "
+      <tr>
+          <td>{$reservation['id']}</td>
+          <td>{$reservation['user_id']}</td>
+          <td>{$reservation['user_name']}</td>
+          <td>{$reservation['package_name']}</td>
+          <td>{$reservation['price']}</td>
+          <td>{$reservation['reservation_date']}</td>
+          <td><a href='edit.php?id={$reservation['id']}'>Edit</a></td>
+          <td><a href='delete.php?id={$reservation['id']}'>Delete</a></td>
+      </tr>
+      ";
+}
+
+     ?>
+ </table>
+   
 </body>
 </html>
-
-

@@ -95,6 +95,9 @@ session_start();
         <input type="hidden" name="package_name" value="Ksamil Beach">
        <input type="hidden" name="price" value="70">
         <button type="submit" class="card-button">Book Now</button>
+        <?php if ($_SESSION['role'] == 'admin'): ?>
+        <a href="    " class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
       </div>
     </div>
@@ -117,6 +120,9 @@ session_start();
             <input type="hidden" name="package_name" value="Bora Bora">
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -140,6 +146,9 @@ session_start();
             <input type="hidden" name="package_name" value="Nice">
             <input type="hidden" name="price" value="90">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
         </div>
@@ -160,6 +169,9 @@ session_start();
             <input type="hidden" name="package_name" value="Santorini">
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+           <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -181,8 +193,10 @@ session_start();
           <form action="saverezervimi.php" method="POST">
             <input type="hidden" name="package_name" value="Paris">
             <input type="hidden" name="price" value="100">
-          
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+            <?php endif; ?>
         </form>
         </div>
       </div>
@@ -203,8 +217,10 @@ session_start();
             <form action="saverezervimi.php" method="POST">
             <input type="hidden" name="package_name" value="Budapesti">
             <input type="hidden" name="price" value="120">
-          
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -226,8 +242,10 @@ session_start();
           <form action="saverezervimi.php" method="POST">
             <input type="hidden" name="package_name" value="Vinnea">
             <input type="hidden" name="price" value="150">
-          
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+           <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -251,8 +269,10 @@ session_start();
           <form action="saverezervimi.php" method="POST">
             <input type="hidden" name="package_name" value="Rome">
             <input type="hidden" name="price" value="135">
-          
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+           <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -274,6 +294,9 @@ session_start();
             <input type="hidden" name="package_name" value="Amsterdam">
             <input type="hidden" name="price" value="140">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+             <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -296,6 +319,9 @@ session_start();
             <input type="hidden" name="package_name" value="Prague">
             <input type="hidden" name="price" value="180">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+            <?php endif; ?>
         </form>
         </div>
       </div>
@@ -318,6 +344,9 @@ session_start();
             <input type="hidden" name="package_name" value="Barcelona">
             <input type="hidden" name="price" value="190">
             <button type="submit" class="card-button">Book Now</button>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+           <a href="" class="edit-button">Manage</a>
+         <?php endif; ?>
         </form>
         </div>
       </div>
@@ -341,7 +370,9 @@ session_start();
             <input type="hidden" name="package_name" value="Cappadocia">
             <input type="hidden" name="price" value="200">
             <button type="submit" class="card-button">Book Now</button>
-        </form>
+            <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="" class="edit-button">Manage</a>
+           <?php endif; ?>
         </form>
         </div>
       </div>
@@ -383,7 +414,7 @@ session_start();
         const navbar = document.querySelector(".navbar");
     
         window.addEventListener("scroll", function () {
-          if (window.scrollY > 100) { // Përdoruesi ka bërë scroll 100px ose më shumë
+          if (window.scrollY > 100) { 
             navbar.classList.add("shrink");
           } else {
             navbar.classList.remove("shrink");

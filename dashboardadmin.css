@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #927f7fbc;
+  background-color: rgb(54, 34, 9);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: rgb(54, 34, 9);
+  box-shadow: rgb(54, 34, 9);
+  padding: 20px;
+}
+
+.sidebar-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav ul li {
+  margin: 10px 0;
+}
+
+.sidebar-nav ul li a {
+  text-decoration: none;
+  color: #ffefef;
+  padding: 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: rgb(54, 34, 9);
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #666;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color:#beab8e;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(33.333% - 20px);
+}
+
+.card i {
+  font-size: 36px;
+}
+
+
+.card a {
+  color: #f9f9f9; 
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+.card a:hover {
+  color: #beab8e; 
+}
+
+
+.card.yellow {
+  background-color: #beab8e;
+}
+
+.card.blue {
+  background-color: #beab8e;
+}
+
+
+.card h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid .box {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid .box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: rgb(54, 34, 9);
+}
+
+
+.writable-box textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical; 
+}
+
+.writable-box textarea:focus {
+  border-color: #4a90e2; 
+  outline: none;
+}
+
+.writable-box {
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+}
+
+.writable-box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+  resize: vertical; 
+}
+
+
+@media (max-width: 768px) {
+  .dashboard {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+  }
+
+  .cards {
+      grid-template-columns: 1fr;
+  }
+
+  .grid {
+      grid-template-columns: 1fr;
+  }
+}

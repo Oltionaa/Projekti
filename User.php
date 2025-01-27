@@ -1,4 +1,5 @@
 <?php
+
 class User {
     private $conn;
     private $table_name = 'userss'; 
@@ -19,32 +20,29 @@ class User {
         if ($stmt->execute()) {
             return true;
         }
-        return false;
     }
 
     public function login($name, $password) {
         $query = "SELECT id, name, password FROM {$this->table_name} WHERE name = :name";
-    
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':name', $name);
         $stmt->execute();
-    
+
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row['password'])) {
-                session_start();
-                $_SESSION['id'] = $row['id'];  
-                $_SESSION['name'] = $row['name'];  
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['name'] = $row['name'];
                 return true;
             }
         }
         return false;
     }
 
-
     public function getUserId() {
-        return $_SESSION['id'] ?? null; 
+        return $_SESSION['id'] ?? null;
     }
+
     public function getUserName($user_id) {
         $query = "SELECT name FROM {$this->table_name} WHERE id = :user_id";
         $stmt = $this->conn->prepare($query);
@@ -52,8 +50,20 @@ class User {
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $row['name'] ?? null;  
+        return $row['name'] ?? null;
+    }
+
+    public function getUserRole($name) {
+        $query = "SELECT role FROM {$this->table_name} WHERE name = :name";
+        $stmt = $this->conn->prepare($query); 
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+    
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row['role'];
+        }
+        return null; 
     }
 }
-
 ?>
