@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+
 * {
     margin: 0;
     padding: 0;
@@ -19,26 +14,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-<<<<<<< HEAD
-<<<<<<< HEAD
     padding-top: 20px; 
     color: white; 
 }
 
 h3 {
     color:  rgba(54, 34, 9); 
-=======
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-    padding-top: 20px; /* Add some space at the top */
-}
-
-h3 {
-    color: rgba(54, 34, 9);
-<<<<<<< HEAD
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
     font-size: 24px;
     margin-bottom: 30px;
 }
@@ -46,15 +27,7 @@ h3 {
 form {
     width: 100%;
     max-width: 420px;
-<<<<<<< HEAD
-<<<<<<< HEAD
     background-color: rgb(88, 60, 26);
-=======
-    background-color: rgba(54, 34, 9);
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
-    background-color: rgba(54, 34, 9);
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
     padding: 50px 60px 70px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -66,8 +39,6 @@ input[type="password"] {
     width: 100%;
     padding: 18px 15px;
     margin: 10px 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background: rgb(88, 49, 49);
     border: 1px solid #5a4848;
@@ -76,20 +47,6 @@ input[type="password"] {
     outline: none;
     color: rgb(140, 108, 108); 
 }
-=======
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-    background: rgb(218, 215, 215);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    color: #666;
-  }
-<<<<<<< HEAD
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 
 input[type="text"]:focus,
 input[type="password"]:focus {
@@ -98,18 +55,8 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-<<<<<<< HEAD
-<<<<<<< HEAD
     background-color: rgb(122, 106, 106);
     color: rgba(54, 34, 9); 
-=======
-    background-color: rgb(255, 255, 255);
-    color:  rgba(54, 34, 9)
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
-    background-color: rgb(255, 255, 255);
-    color:  rgba(54, 34, 9)
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
     font-size: 16px;
     font-weight: bold;
     padding: 12px 45px;
@@ -122,13 +69,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #6a3d2f;
-<<<<<<< HEAD
-<<<<<<< HEAD
     color: white; 
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 }
 
 input[readonly] {
@@ -144,33 +85,14 @@ form br {
 form p {
     text-align: center;
     font-size: 15px;
-<<<<<<< HEAD
-<<<<<<< HEAD
     color: white;
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 }
 
 form p a {
     text-decoration: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
     color: white; 
 }
 
-=======
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-    color: rgba(54, 34, 9);
-}
-
-/* For larger screens (Desktop) */
-<<<<<<< HEAD
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 @media (min-width: 1024px) {
     form {
         max-width: 500px;
