@@ -1,7 +1,11 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 include_once 'databaseConnection.php';
+=======
+include_once 'C:\xampp\htdocs\Projekti-1\databaseConnection.php';
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 =======
 include_once 'C:\xampp\htdocs\Projekti-1\databaseConnection.php';
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
@@ -10,6 +14,7 @@ class UserRepository {
     private $connection; 
 
     function __construct() {
+<<<<<<< HEAD
 <<<<<<< HEAD
        $conn = new DatabaseConenction(); 
         $this->connection = $conn->startConnection(); 
@@ -117,6 +122,8 @@ class UserRepository {
         $sql = "SELECT * FROM reservations";
 
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
        $conn = new DatabaseConenction(); // Fixed the typo in 'DatabaseConnection'
         $this->connection = $conn->startConnection(); 
     }
@@ -150,6 +157,9 @@ class UserRepository {
         $sql = "SELECT * FROM reservations"; // Correct table name
 
         // Execute the query
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
         $statement = $conn->query($sql); 
         $users = $statement->fetchAll(); 
@@ -157,6 +167,7 @@ class UserRepository {
         return $users; 
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   
     
@@ -185,6 +196,8 @@ class UserRepository {
 }
 ?>
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
     // Get a user by ID
     function getUserById($id) {
         $conn = $this->connection;
@@ -232,4 +245,7 @@ class UserRepository {
 }
 
 ?>
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f

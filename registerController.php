@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 include_once 'userRepository.php';
 include_once 'userrrpt2.php';
 
@@ -30,6 +31,8 @@ if (isset($_POST['registerBtn'])) {
 }
 ?>
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
 include_once 'C:\xampp\htdocs\Projekti-1\userrrpt2.php';
 
@@ -59,4 +62,7 @@ if (isset($_POST['registerBtn'])) {
     }
 }
 ?>
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f

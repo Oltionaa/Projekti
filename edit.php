@@ -2,6 +2,7 @@
 $userId = $_GET['id'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 include_once 'userRepository.php';
 
 $userRepository = new UserRepository();
@@ -21,6 +22,8 @@ if (isset($_POST['editBtn'])) {
 
     header("location: Reservations.php");
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
 
 $userRepository = new UserRepository();
@@ -47,6 +50,9 @@ if (isset($_POST['editBtn'])) {
 
 
     header("location:Reservations.php");
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
     exit();
 }
@@ -60,6 +66,7 @@ if (isset($_POST['editBtn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Reservation</title>
     <link rel="stylesheet" href="edit.css">
+<<<<<<< HEAD
 <<<<<<< HEAD
 </head>
 <body>
@@ -75,6 +82,8 @@ if (isset($_POST['editBtn'])) {
 </body>
 </html
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 
 </head>
 <body>
@@ -94,4 +103,7 @@ if (isset($_POST['editBtn'])) {
     </form>
 </body>
 </html>
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f

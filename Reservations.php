@@ -33,7 +33,11 @@ $reservations = $userRepository->getUserReservations($user_id);
         <ul>
           <li><a href="#">Reservations</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <li> <a href='home.php'>Home</a></li>
+=======
+          <li> <a href='home.html'>Home</a></li>
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 =======
           <li> <a href='home.html'>Home</a></li>
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
@@ -57,7 +61,10 @@ $username = "root";
 $password = "";
 $dbname = "projekti";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 =======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 
@@ -105,7 +112,10 @@ $conn->close();
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 
  
 <table border="1">
@@ -154,6 +164,16 @@ foreach($users as $user){
     <form method="POST" action="Reservations.php">
         <label for="Statusi">Emri:</label>
         <input type="text" name="Emri" id="Emri" required><br><br>
+<<<<<<< HEAD
+=======
+
+
+        <label for="Statusi">Mbiemri:</label>
+        <input type="text" name="Mbiemri" id="Mbiemri" required><br><br>
+
+        <label for="Destinacioni">Destinacioni:</label>
+        <input type="text" name="Destinacioni" id="Destinacioni" required><br><br>
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 
 
         <label for="Statusi">Mbiemri:</label>

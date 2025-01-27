@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="form-box">
             <h1 id="title">Log In</h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
@@ -61,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 =======
 <<<<<<< HEAD
+            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+=======
+            <form id="login-form" action="login.php" method="POST">
+>>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 =======
             <form id="login-form" action="login.php" method="POST">
@@ -94,9 +101,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 <<<<<<< HEAD
     
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     
+    
+=======
+>>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
     
 =======
 >>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
@@ -144,8 +157,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
 <<<<<<< HEAD
 </body>
+<<<<<<< HEAD
 =======
 </body>
+=======
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
 <<<<<<< HEAD
 </html>
              
@@ -153,4 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                  
 >>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+<<<<<<< HEAD
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
+=======
 >>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
