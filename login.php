@@ -53,11 +53,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="form-box">
             <h1 id="title">Log In</h1>
+<<<<<<< HEAD
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
             <form id="login-form" action="login.php" method="POST">
 
+=======
+<<<<<<< HEAD
+            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+=======
+            <form id="login-form" action="login.php" method="POST">
+>>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
                 <div class="field">
                     <div class="input-field name-field">
                         <input type="text"  name="name" placeholder="Name" class="name" />
@@ -84,7 +92,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php include_once 'C:\xampp\htdocs\Projekti-1\registerController.php';?>
         </div>
     </div>
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    
+    
+=======
+>>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
      <script>
         document.addEventListener("DOMContentLoaded", function (ngjarja) {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -126,4 +142,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             BtnSubmit.addEventListener('click', validate);
         });
     </script>
+<<<<<<< HEAD
 </body>
+=======
+</body>
+<<<<<<< HEAD
+</html>
+             
+=======
+
+                 
+>>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f

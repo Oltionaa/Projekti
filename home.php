@@ -12,6 +12,8 @@ session_start();
   <link rel ="stylesheet"  href="our.css">
   <link rel ="stylesheet"  href="offers.css">
   <link rel="stylesheet" href="footer.css"/>
+  
+
 </head>
 <body>
       
@@ -25,6 +27,8 @@ session_start();
       <a href="offers.html">Offers</a>
       <a href="footer.html">Contact us</a>
       <a href="signinn.html">Sign in</a>
+      <a href="Dashboard.php">Profile</a>
+      
   </div>
 
   <div class="container">

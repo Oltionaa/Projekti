@@ -30,4 +30,8 @@ class DatabaseConenction {
     }
 }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
