@@ -9,35 +9,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = new User($connection);
 
     $name = $_POST['name'];
+    
     $password = $_POST['password'];
 
+   
     if ($user->login($name, $password)) {
         $_SESSION['name'] = $name;
         $_SESSION['user_id'] = $user->getUserId($name);  
+        $_SESSION['role'] = $user->getUserRole($name);  
+
+     
         header("Location: home.php");
-        exit;
+        exit; 
     } else {
+      
         header("Location: signinn.html");
         exit;
     }
 }
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
-
-
-    <!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -53,26 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="form-box">
             <h1 id="title">Log In</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
-            <form id="login-form" action="login.php" method="POST">
-
-=======
-<<<<<<< HEAD
-            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-=======
-            <form id="login-form" action="login.php" method="POST">
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
-            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-=======
-            <form id="login-form" action="login.php" method="POST">
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
                 <div class="field">
                     <div class="input-field name-field">
                         <input type="text"  name="name" placeholder="Name" class="name" />
@@ -99,21 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php include_once 'C:\xampp\htdocs\Projekti-1\registerController.php';?>
         </div>
     </div>
-<<<<<<< HEAD
     
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
-    
-=======
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
      <script>
         document.addEventListener("DOMContentLoaded", function (ngjarja) {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -148,28 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
             
             const passwordValid = (password) => {
-                const passwordRegex = /^(?=.[A-Za-z])(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&*]{8,}$/;
-                return passwordRegex.test(password); 
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+             return passwordRegex.test(password);
             };
+
 
             BtnSubmit.addEventListener('click', validate);
         });
     </script>
-<<<<<<< HEAD
 </body>
-<<<<<<< HEAD
-=======
-</body>
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-<<<<<<< HEAD
-</html>
-             
-=======
-
-                 
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
-<<<<<<< HEAD
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
-=======
->>>>>>> f3f1c22c6fca8a5d102c61bef042ff2f1589453f
