@@ -1,7 +1,10 @@
 <?php
 session_start();
 
+// Kontrolloni nëse përdoruesi është admin
+$isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +15,6 @@ session_start();
   <link rel ="stylesheet"  href="our.css">
   <link rel ="stylesheet"  href="offers.css">
   <link rel="stylesheet" href="footer.css"/>
-  
-
 </head>
 <body>
       
@@ -27,8 +28,6 @@ session_start();
       <a href="offers.html">Offers</a>
       <a href="footer.html">Contact us</a>
       <a href="signinn.html">Sign in</a>
-      <a href="Dashboard.php">Profile</a>
-      
   </div>
 
   <div class="container">
@@ -99,10 +98,9 @@ session_start();
         <input type="hidden" name="package_name" value="Ksamil Beach">
        <input type="hidden" name="price" value="70">
         <button type="submit" class="card-button">Book Now</button>
-        <?php if ($_SESSION['role'] == 'admin'): ?>
-        <a href="    " class="edit-button">Manage</a>
+        <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
-        </form>
       </div>
     </div>
     <div class="card">
@@ -124,9 +122,9 @@ session_start();
             <input type="hidden" name="package_name" value="Bora Bora">
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -150,9 +148,9 @@ session_start();
             <input type="hidden" name="package_name" value="Nice">
             <input type="hidden" name="price" value="90">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
         </div>
@@ -173,9 +171,9 @@ session_start();
             <input type="hidden" name="package_name" value="Santorini">
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-           <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -198,9 +196,9 @@ session_start();
             <input type="hidden" name="package_name" value="Paris">
             <input type="hidden" name="price" value="100">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-            <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -222,9 +220,9 @@ session_start();
             <input type="hidden" name="package_name" value="Budapesti">
             <input type="hidden" name="price" value="120">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -247,9 +245,9 @@ session_start();
             <input type="hidden" name="package_name" value="Vinnea">
             <input type="hidden" name="price" value="150">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-           <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -274,9 +272,9 @@ session_start();
             <input type="hidden" name="package_name" value="Rome">
             <input type="hidden" name="price" value="135">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-           <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -298,9 +296,9 @@ session_start();
             <input type="hidden" name="package_name" value="Amsterdam">
             <input type="hidden" name="price" value="140">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-             <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -323,9 +321,9 @@ session_start();
             <input type="hidden" name="package_name" value="Prague">
             <input type="hidden" name="price" value="180">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-            <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -348,9 +346,9 @@ session_start();
             <input type="hidden" name="package_name" value="Barcelona">
             <input type="hidden" name="price" value="190">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-           <a href="" class="edit-button">Manage</a>
-         <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php.php" class="edit-button">Manage</a>
+        <?php endif; ?>
         </form>
         </div>
       </div>
@@ -374,9 +372,10 @@ session_start();
             <input type="hidden" name="package_name" value="Cappadocia">
             <input type="hidden" name="price" value="200">
             <button type="submit" class="card-button">Book Now</button>
-            <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="" class="edit-button">Manage</a>
-           <?php endif; ?>
+            <?php if ($isAdmin): ?>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
+        <?php endif; ?>
+
         </form>
         </div>
       </div>
