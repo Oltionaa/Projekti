@@ -1,6 +1,11 @@
 <html>
-  <body>
+  <head>
     <link rel ="stylesheet"  href="our.css">
+    <link rel ="stylesheet"  href="home.css">
+  </head>
+  <body>
+    <?php include('navbar.php'); ?>
+    
     <div class="section-container">
       <h1 class="section-title">Let us plan you a perfect Escape</h1>
       <p class="section-subtitle">Choose your type of tour</p>
@@ -42,6 +47,6 @@
         </div>
       </div> 
     </div>
-    
+    <script src="navbar.js"></script>
 </body>
 </html>

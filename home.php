@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Kontrolloni nëse përdoruesi është admin
 $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
 ?>
 
@@ -23,10 +22,10 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
           <img src="logo.png"alt ="Company Logo">
       </div>
       <a href="home.html">Home</a>
-      <a href="aboutus.html">About us</a>
-      <a href="our.html">Our Services</a>
-      <a href="offers.html">Offers</a>
-      <a href="footer.html">Contact us</a>
+      <a href="aboutus.php">About us</a>
+      <a href="our.php">Our Services</a>
+      <a href="offers.php">Offers</a>
+      <a href="footer.php">Contact us</a>
       <a href="signinn.html">Sign in</a>
   </div>
 
@@ -51,7 +50,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="city.html" class="tour-card-button">Explore</a> 
+          <a href="city.php" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
@@ -62,7 +61,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="museumtour.html" class="tour-card-button">Explore</a> 
+          <a href="museumtour.php" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
@@ -74,7 +73,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
               Beach Equipment, Access to Amenities: Use of clean restrooms, showers, and changing rooms for your convenience.
               Free Time to Explore.
           </p>
-          <a href="beaches.html" class="tour-card-button">Explore</a> 
+          <a href="beaches.php" class="tour-card-button">Explore</a> 
         </div>
       </div> 
     </div>

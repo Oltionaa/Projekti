@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Gallery with Captions</title>
   <link rel="stylesheet" href="aboutus.css">
-
+  <link rel="stylesheet" href="home.css"/>
 </head>
 <body>
+  <?php include('navbar.php'); ?>
   <div class="gallery-container">
     <button class="scroll-btn prev" onclick="prevImg()">&#10094;</button>
     <div class="gallery">
