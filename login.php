@@ -11,17 +11,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $password = $_POST['password'];
 
+   
     if ($user->login($name, $password)) {
         $_SESSION['name'] = $name;
         $_SESSION['user_id'] = $user->getUserId($name);  
+
+     
         header("Location: home.php");
-        exit;
+        exit; 
     } else {
+      
         header("Location: signinn.html");
         exit;
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,11 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="form-box">
             <h1 id="title">Log In</h1>
-<<<<<<< HEAD
+
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-=======
+
             <form id="login-form" action="login.php" method="POST">
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
+
                 <div class="field">
                     <div class="input-field name-field">
                         <input type="text"  name="name" placeholder="Name" class="name" />
@@ -84,11 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php include_once 'C:\xampp\htdocs\Projekti-1\registerController.php';?>
         </div>
     </div>
-<<<<<<< HEAD
     
-    
-=======
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
      <script>
         document.addEventListener("DOMContentLoaded", function (ngjarja) {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -131,10 +132,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
     </script>
 </body>
-<<<<<<< HEAD
-</html>
-             
-=======
-
-                 
->>>>>>> 888a5f9dc5fb6a12a33f208aee3cdce8b4a13d0b
