@@ -1,6 +1,6 @@
 <?php
 
-include_once 'C:\xampp\htdocs\Projekti-1\databaseConnection.php';
+include_once 'databaseConnection.php';
 
 class UserRepository {
     private $connection; 
@@ -35,8 +35,10 @@ class UserRepository {
         $price = $user->getprice();
         $reservation_date = $useri->getreservation_date();
 
-        
-        $sql = "INSERT INTO reservations (id, user_id, user_name,package_name,price,reservation_date) VALUES (?, ?, ?,?, ?, ?)"; // Correct table name
+
+        $sql = "INSERT INTO reservations (id, user_id, user_name,package_name,price,reservation_date) VALUES (?, ?, ?,?, ?, ?)"; 
+
+     
 
         $statement = $conn->prepare($sql); 
         $statement->execute([$id, $user_id, $user_name,$package_name,$price,$reservation_date]);

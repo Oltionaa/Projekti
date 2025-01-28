@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = new User($conn);
 
     try {
-        
         $user_name = $user->getUserName($user_id);
 
         if (!$user_name) {
@@ -26,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        
         $insertStmt = $conn->prepare("
             INSERT INTO reservations (user_id, package_name, price, user_name, reservation_date)
             VALUES (:user_id, :package_name, :price, :user_name, NOW())
@@ -37,7 +35,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $insertStmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
         $insertStmt->execute();
 
-        echo "Rezervimi u ruajt me sukses!";
+        echo "
+        <div style='text-align: center; margin-top: 20px;'>
+            <h2>Rezervimi u ruajt me sukses!</h2>
+            <p>Ju mund të shikoni rezervimet tuaja ose të ktheheni në faqen fillestare.</p>
+            <a href='Reservations.php' style='
+                display: inline-block;
+                margin: 10px;
+                padding: 10px 20px;
+                background-color: #28a745;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            '>Shiko Rezervimet</a>
+            <a href='home.php' style='
+                display: inline-block;
+                margin: 10px;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            '>Kthehu në Home</a>
+        </div>
+        ";
     } catch (PDOException $e) {
         echo "Gabim gjatë ruajtjes së rezervimit: " . $e->getMessage();
     }

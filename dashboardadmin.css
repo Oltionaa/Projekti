@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7ccec6771eae3e3a8075d643baa2c26946b14f3b
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -193,4 +196,8 @@ textarea {
   .grid {
       grid-template-columns: 1fr;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7ccec6771eae3e3a8075d643baa2c26946b14f3b

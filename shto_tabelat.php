@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['Password'];
@@ -26,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Gabim në deklaratën SQL: " . $conn->error);
     }
     $stmt->bind_param("ssss", $name, $email, $hashedPassword, $role);
+
+    
 
     if ($stmt->execute()) {
         echo "Useri u shtua me sukses! <a href='lista_tabelave.php'>Shiko userin</a>";
@@ -40,4 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $conn->close();
+
 ?>

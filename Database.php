@@ -20,4 +20,9 @@ class Database {
         return $this->conn;
     }
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+
+>>>>>>> 7ccec6771eae3e3a8075d643baa2c26946b14f3b

@@ -1,7 +1,7 @@
 <?php
 
-include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
-include_once 'C:\xampp\htdocs\Projekti-1\userrrpt2.php';
+include_once 'userRepository.php';
+include_once 'userrrpt2.php';
 
 if (isset($_POST['registerBtn'])) {
    
