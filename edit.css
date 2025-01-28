@@ -1,5 +1,4 @@
 
-
 * {
     margin: 0;
     padding: 0;
@@ -55,21 +54,26 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-    background-color: rgb(122, 106, 106);
-    color: rgba(54, 34, 9); 
+    width: 100%; 
+    background: linear-gradient(90deg, rgba(122, 106, 106, 1) 0%, rgba(88, 60, 26, 1) 100%);
+    color: white; 
     font-size: 16px;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 14px 0; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
 input[type="submit"]:hover {
-    background-color: #6a3d2f;
-    color: white; 
+    background: linear-gradient(90deg, rgba(88, 60, 26, 1) 0%, rgba(122, 106, 106, 1) 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 input[readonly] {

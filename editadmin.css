@@ -12,12 +12,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    padding-top: 20px; /* Add some space at the top */
-    color: white; /* Make body text white */
+    padding-top: 20px; 
+    color: white; 
 }
 
 h3 {
-    color: rgb(52, 12, 12); /* Set form header text to white */
+    color: rgb(52, 12, 12); 
     font-size: 24px;
     margin-bottom: 30px;
 }
@@ -42,7 +42,7 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 16px;
     outline: none;
-    color:rgba(54, 34, 9); /* Make text inside inputs white */
+    color:rgba(54, 34, 9); /
 }
 
 input[type="text"]:focus,
@@ -53,7 +53,7 @@ input[type="password"]:focus {
 
 input[type="submit"] {
     background-color: rgb(106, 92, 92);
-    color: rgba(54, 34, 9); /* Submit button text color */
+    color: rgba(54, 34, 9); 
     font-size: 16px;
     font-weight: bold;
     padding: 12px 45px;
@@ -66,7 +66,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #6a3d2f;
-    color: rgb(106, 92, 92); /* White text on hover */
+    color: rgb(106, 92, 92); 
 }
 
 input[readonly] {
@@ -82,15 +82,15 @@ form br {
 form p {
     text-align: center;
     font-size: 15px;
-    color: white; /* Ensure text in the paragraph is white */
+    color: white;
 }
 
 form p a {
     text-decoration: none;
-    color: white; /* Make the link color white */
+    color: white; 
 }
 
-/* For larger screens (Desktop) */
+
 @media (min-width: 1024px) {
     form {
         max-width: 500px;

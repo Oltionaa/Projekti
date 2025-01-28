@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="dashboard">
-    <!-- Sidebar -->
+    
     <aside class="sidebar">
       <div class="sidebar-header">
         <h3>My Project</h3>
@@ -20,7 +20,7 @@
       </nav>
     </aside>
 
-    <!-- Main Content -->
+  
     <main class="main-content">
       <header class="header">
         <h1>Dashboard</h1>

@@ -59,9 +59,7 @@ class Useri {
         $this->reservation_date = $reservation_date;
     }
 }
-<<<<<<< HEAD
+
 ?>
 
-=======
-?
->>>>>>> 7ccec6771eae3e3a8075d643baa2c26946b14f3b
+

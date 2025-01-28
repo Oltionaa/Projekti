@@ -30,20 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
-
-
-    <!DOCTYPE html>
-<html lang="en">
 
   <head>
     
@@ -58,20 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="form-box">
             <h1 id="title">Log In</h1>
-
-
-            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-
-            <form id="login-form" action="login.php" method="POST">
-
-            <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-
-            <form id="login-form" action="login.php" method="POST">
-
-
-
-
-
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
@@ -104,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     
-
      <script>
         document.addEventListener("DOMContentLoaded", function (ngjarja) {
             const BtnSubmit = document.getElementById('submit-btn');
@@ -139,17 +110,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
             
             const passwordValid = (password) => {
-                const passwordRegex = /^(?=.[A-Za-z])(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&*]{8,}$/;
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
                 return passwordRegex.test(password); 
             };
 
             BtnSubmit.addEventListener('click', validate);
         });
     </script>
-
 </body>
-
-</body>
-
-</html>
-             
