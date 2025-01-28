@@ -9,6 +9,8 @@ $userRepository = new UserRepository();
 
 $userRepository->deleteUser($userId);
 
-header("location:Reservations.php");
-exit();
+
+
+header("location:dashboardadmin.php");
+
 ?>

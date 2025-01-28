@@ -16,7 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user->login($name, $password)) {
         $_SESSION['name'] = $name;
         $_SESSION['user_id'] = $user->getUserId($name);  
+<<<<<<< HEAD
         $_SESSION['role'] = $user->getUserRole($name);  
+=======
+>>>>>>> d14a30f8bd2eaab5d2d27243d05ee7928ca1f979
 
      
         header("Location: home.php");
@@ -49,6 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 
+<<<<<<< HEAD
+=======
+            <form id="login-form" action="login.php" method="POST">
+
+>>>>>>> d14a30f8bd2eaab5d2d27243d05ee7928ca1f979
                 <div class="field">
                     <div class="input-field name-field">
                         <input type="text"  name="name" placeholder="Name" class="name" />
@@ -110,8 +118,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
             
             const passwordValid = (password) => {
+<<<<<<< HEAD
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
              return passwordRegex.test(password);
+=======
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+                return passwordRegex.test(password); 
+>>>>>>> d14a30f8bd2eaab5d2d27243d05ee7928ca1f979
             };
 
 

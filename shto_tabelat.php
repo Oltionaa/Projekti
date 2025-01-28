@@ -1,30 +1,37 @@
 <?php
-// Lidhja me bazën e të dhënave
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "boundlesstravel";
+$dbname = "projekti";
 
-// Krijo lidhjen
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Kontrollo lidhjen
+
 if ($conn->connect_error) {
     die("Lidhja dështoi: " . $conn->connect_error);
 }
 
-// Kontrollo nëse të dhënat janë dërguar me POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Statusi = $_POST['Statusi'];
-    $Destinacioni = $_POST['Destinacioni'];
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['Password'];
+    $role = $_POST['role'];
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("INSERT INTO userss (name, email,Password, role) VALUES ( ?, ?, ?,?)");
+    if (!$stmt) {
+        die("Gabim në deklaratën SQL: " . $conn->error);
+    }
+    $stmt->bind_param("ssss", $name, $email, $hashedPassword, $role);
+
     
 
-    // Deklaratë e përgatitur për futjen e të dhënave
-    $stmt = $conn->prepare("INSERT INTO Rezervimi (Statusi, Destinacioni) VALUES (?, ?)");
-    $stmt->bind_param("ss", $Statusi, $Destinacioni);
-
     if ($stmt->execute()) {
-        echo "Rezervimi u shtua me sukses! <a href='lista_tabelave.php'>Shiko Rezervimin</a>";
+        echo "Useri u shtua me sukses! <a href='lista_tabelave.php'>Shiko userin</a>";
     } else {
         echo "Gabim: " . $stmt->error;
     }
@@ -32,7 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
-// Mbyll lidhjen
-$conn->close();
-?>
 
+
+
+$conn->close();
+
+?>

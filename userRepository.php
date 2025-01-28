@@ -35,8 +35,10 @@ class UserRepository {
         $price = $user->getprice();
         $reservation_date = $useri->getreservation_date();
 
-        
+
         $sql = "INSERT INTO reservations (id, user_id, user_name,package_name,price,reservation_date) VALUES (?, ?, ?,?, ?, ?)"; 
+
+     
 
         $statement = $conn->prepare($sql); 
         $statement->execute([$id, $user_id, $user_name,$package_name,$price,$reservation_date]);
