@@ -16,6 +16,7 @@
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#">Dashboard</a></li>
+          <li><a href="logout.php">Logout</a></li>
         </ul>
       </nav>
     </aside>

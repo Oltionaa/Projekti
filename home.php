@@ -99,7 +99,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
        <input type="hidden" name="price" value="70">
         <button type="submit" class="card-button">Book Now</button>
         <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
       </div>
     </div>
@@ -123,7 +123,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -149,7 +149,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="90">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -172,7 +172,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="80">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -197,7 +197,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="100">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -221,7 +221,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="120">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -246,7 +246,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="150">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -273,7 +273,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="135">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -297,7 +297,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="140">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -322,7 +322,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="180">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -347,7 +347,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="190">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
@@ -373,7 +373,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="200">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
 
         </form>
