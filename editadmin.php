@@ -28,7 +28,7 @@ if (isset($_POST['editBtn'])) {
    
     $UserRepository->updateUseri($id, $package_name, $price, $reservation_date);
 
-    /
+    
     header("location:Dashboardadmin.php");
     exit();
 }
