@@ -44,7 +44,7 @@ class UserRepository {
         $statement->execute([$id, $user_id, $user_name,$package_name,$price,$reservation_date]);
 
 
-        echo "<script> alert('User has been inserted successfully!'); </script>";
+        echo "<script> alert('User u insertua me sukses !'); </script>";
     }
 
     function getUserReservations($user_id) {
@@ -86,7 +86,7 @@ class UserRepository {
        
         $statement->execute([$user_name, $reservation_date, $id]);
     
-        echo "<script>alert('Update was successful');</script>";
+        echo "<script>alert('Update kishe sukses');</script>";
     }
 
 
@@ -105,7 +105,7 @@ class UserRepository {
         $statement->execute([$package_name, $price, $reservation_date, $id]);
 
       
-        echo "<script>alert('Update was successful');</script>";
+        echo "<script>alert('Update kishe sukses');</script>";
     }
 
     //merr kejt parametrat per adminin
@@ -138,9 +138,9 @@ class UserRepository {
             $statement = $conn->prepare($sql);
             $statement->execute([$id]);
     
-            echo "<script>alert('Delete was successful');</script>";
+            echo "<script>alert('Fshirja ishte e sukseshme');</script>";
         } else {
-            echo "<script>alert('Record not found');</script>";
+            echo "<script>alert('Nuk u gjet ai user');</script>";
         }
     }
     

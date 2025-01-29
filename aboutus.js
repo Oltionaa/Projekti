@@ -48,12 +48,7 @@ function nextImg() {
     } else {
         i = 0;
     }
-    updateGallery();//Kjo kontrollon nëse indeksi aktual nuk ka arritur fundin e listës së imazheve.
-   // Nëse ka më shumë imazhe për të kaluar, rrit indeksin (i++), duke kaluar te imazhi tjetër në listë.
-    //Përdor else për të kthyer indeksin në fillim:
-    
-    //Nëse i është i barabartë me indeksin e fundit (p.sh., i === foto.length - 1), kjo do të thotë se kemi arritur fundin e arrays.
-    //Kthejmë indeksin në fillim (i = 0) për të krijuar një cikël të vazhdueshëm.
+    updateGallery();
 }
 
 function prevImg() {
@@ -64,13 +59,6 @@ function prevImg() {
     }
     updateGallery();
 }
-//Kontrollon nëse i është më i madh se 0: i > 0:
-//Kjo kontrollon nëse indeksi aktual nuk është në fillim të listës.
-//Nëse nuk është, zvogëlohet indeksi (i--), duke kaluar te imazhi i mëparshëm.
-//Përdor else për të kaluar në fund të listës:
-
-//Nëse i është 0 (pra, jemi te imazhi i parë në listë), kjo do të thotë se nuk mund të kalojmë më mbrapa.
-//Vendosim indeksin i në foto.length - 1, që është indeksi i fundit, për të vazhduar ciklin rrethor.
 
 document.addEventListener('DOMContentLoaded', function () {
     updateGallery();
