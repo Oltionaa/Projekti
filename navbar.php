@@ -1,11 +1,11 @@
 <div class="navbar">
     <div class="Logo">
-        <img src="logo.png" alt="Company Logo">
+        <img src="fotot/logo.png" alt="Company Logo">
     </div>
-    <a href="home.html">Home</a>
-    <a href="aboutus.html">About us</a>
-    <a href="our.html">Our Services</a>
-    <a href="offers.html">Offers</a>
-    <a href="footer.html">Contact us</a>
+    <a href="home.php">Home</a>
+    <a href="aboutus.php">About us</a>
+    <a href="our.php">Our Services</a>
+    <a href="offers.php">Offers</a>
+    <a href="footer.php">Contact us</a>
     <a href="signinn.html">Sign in</a>
 </div>

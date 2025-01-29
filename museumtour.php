@@ -14,7 +14,7 @@
         <div class="cards-container">
             <div class="card">
                 <div class="card-image">
-                    <img src="colo.jpg" alt="Colosseum">
+                    <img src="fotot/colo.jpg" alt="Colosseum">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Colosseum</h3>
@@ -31,7 +31,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="l.jpg" alt="The Louvre">
+                    <img src="fotot/l.jpg" alt="The Louvre">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">The Louvre</h3>
@@ -48,7 +48,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="museumlondon.jpg" alt="Butterfly Paradise">
+                    <img src="fotot/museumlondon.jpg" alt="Butterfly Paradise">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Butterfly Paradise</h3>
@@ -65,7 +65,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="ny.jpg" alt="The Met">
+                    <img src="fotot/ny.jpg" alt="The Met">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">The Metropolitan Museum of Art</h3>

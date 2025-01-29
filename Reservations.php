@@ -44,7 +44,7 @@ $reservations = $userRepository->getUserReservations($user_id);
    
     <main class="main-content">
       <header class="header">
-        <h1>Dashboard</h1>
+        <h1>Profile</h1>
         <p> .</p>
       </header>
 

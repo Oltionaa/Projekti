@@ -13,7 +13,7 @@
 <div class="cards-container">
   <div class="card">
     <div class="card-image">
-      <img src="ksamil-beach.jpg" alt="Ksamil Beach">
+      <img src="fotot/ksamil-beach.jpg" alt="Ksamil Beach">
     </div>
     <div class="card-content">
       <h3 class="card-title">Ksamil Beach</h3>
@@ -33,7 +33,7 @@
   </div>
   <div class="card">
       <div class="card-image">
-        <img src="bora.jpg" alt="Bora">
+        <img src="fotot/bora.jpg" alt="Bora">
       </div>
       <div class="card-content">
         <h3 class="card-title">Bora Bora</h3>
@@ -56,7 +56,7 @@
 
     <div class="card">
       <div class="card-image">
-        <img src="nice.jpg" alt="Nice">
+        <img src="fotot/nice.jpg" alt="Nice">
       </div>
       <div class="card-content">
         <h3 class="card-title">Nice </h3>
@@ -78,7 +78,7 @@
       </div>
     <div class="card">
       <div class="card-image">
-        <img src=santorini.jpg alt="Santorini">
+        <img src="fotot/santorini.jpg "alt="Santorini">
       </div>
       <div class="card-content">
         <h3 class="card-title">Santorini</h3>
@@ -99,7 +99,7 @@
       
     <div class="card">
       <div class="card-image">
-        <img src="paris.jpg"alt="Paris">
+        <img src="fotot/paris.jpg"alt="Paris">
       </div>
       <div class="card-content">
         <h3 class="card-title">Paris</h3>
@@ -122,7 +122,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="budapesti.jpg" alt="Budapesti">
+        <img src="fotot/budapesti.jpg" alt="Budapesti">
       </div>
       <div class="card-content">
         <h3 class="card-title">Budapesti</h3>
@@ -144,7 +144,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="vinnea.jpg" alt="Vinnea">
+        <img src="fotot/vinnea.jpg" alt="Vinnea">
       </div>
       <div class="card-content">
         <h3 class="card-title">Vinnea</h3>
@@ -167,7 +167,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="rome.jpg" alt="Rome">
+        <img src="fotot/rome.jpg" alt="Rome">
       </div>
       <div class="card-content">
         <h3 class="card-title">Rome</h3>
@@ -192,7 +192,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="amsterdam.jpg" alt="Amsterdam">
+        <img src="fotot/amsterdam.jpg" alt="Amsterdam">
       </div>
       <div class="card-content">
         <h3 class="card-title">Amsterdam</h3>
@@ -213,7 +213,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="prague.jpg" alt="Prague">
+        <img src="fotot/prague.jpg" alt="Prague">
       </div>
       <div class="card-content">
         <h3 class="card-title">Prague</h3>
@@ -235,7 +235,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="barcelona1.jpg" alt="Barcelona">
+        <img src="fotot/barcelona1.jpg" alt="Barcelona">
       </div>
       <div class="card-content">
         <h3 class="card-title">Barcelona</h3>
@@ -257,7 +257,7 @@
      
     <div class="card">
       <div class="card-image">
-        <img src="turkey.jpg"alt="Cappadocia">
+        <img src="fotot/turkey.jpg"alt="Cappadocia">
       </div>
       <div class="card-content">
         <h3 class="card-title">Cappadocia</h3>

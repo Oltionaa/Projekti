@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="beaches.css"/>
+        <link rel="stylesheet" href="home.css"/>
     </head>
     <body>
     <?php include('navbar.php'); ?>
@@ -9,7 +10,7 @@
             <div class="cards-container">
                 <div class="card">
                     <div class="card-image">
-                        <img src="plazha1.jpg" alt="Pampelonne">
+                        <img src="fotot/plazha1.jpg" alt="Pampelonne">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Pampelonne Beach</h3>
@@ -28,7 +29,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="plazha2.jpg" alt="Bodrum">
+                        <img src="fotot/plazha2.jpg" alt="Bodrum">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Bodrum</h3>
@@ -46,7 +47,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="plazha3.jpg" alt="Thailand">
+                        <img src="fotot/plazha3.jpg" alt="Thailand">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Thailand</h3>
@@ -64,7 +65,7 @@
 
                 <div class="card">
                     <div class="card-image">
-                        <img src="plazha4.jpg" alt="Kisiwa">
+                        <img src="fotot/plazha4.jpg" alt="Kisiwa">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Kisiwa</h3>

@@ -13,29 +13,29 @@
       <div class="tour-cards-row">
         <div class="tour-card">
           <div class="tour-card-image">
-            <img src="cityt.jpg" alt="City Tours">
+            <img src="fotot/cityt.jpg" alt="City Tours">
           </div>
           <h3 class="tour-card-title">City Tours</h3>
           <p class="tour-card-details">
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="city-tour.html" class="tour-card-button">Explore</a> 
+          <a href="city.php" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
-            <img src="muzeu.jpg" alt="Museum Tours">
+            <img src="fotot/muzeu.jpg" alt="Museum Tours">
           </div>
           <h3 class="tour-card-title">Museum Tours</h3>
           <p class="tour-card-details">
               Tickets, Expert Local Guide, Exclusive Experiences, Photo Stops,
               Flexible Free Time, Comfortable Group
           </p>
-          <a href="museumtour.html" class="tour-card-button">Explore</a> 
+          <a href="museumtour.php" class="tour-card-button">Explore</a> 
         </div>
         <div class="tour-card">
           <div class="tour-card-image">
-            <img src="beaches.jpg" alt="Beaches">
+            <img src="fotot/beaches.jpg" alt="Beaches">
           </div>
           <h3 class="tour-card-title">Beaches</h3>
           <p class="tour-card-details">
@@ -43,7 +43,7 @@
               Beach Equipment, Access to Amenities: Use of clean restrooms, showers, and changing rooms for your convenience.
               Free Time to Explore.
           </p>
-          <a href="beaches.html" class="tour-card-button">Explore</a> 
+          <a href="beaches.php" class="tour-card-button">Explore</a> 
         </div>
       </div> 
     </div>

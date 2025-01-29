@@ -8,7 +8,7 @@
 <body>
   <?php include('navbar.php'); ?>
 <section id="footer">
- <img src="f.png" class="footer-img">
+ <img src="fotot/f.png" class="footer-img">
  <div class="title-text">
    <h1>CONTACT US</h1>
    <h1></h1>
@@ -27,9 +27,9 @@
  </div>
 
  <div class="social">
-   <img src="facebook.png">
-   <img src="twitter.png">
-   <img src="instagram.png">
+   <img src="fotot/facebook.png">
+   <img src="fotot/twitter.png">
+   <img src="fotot/instagram.png">
    <p>Copyright 2024 Travel Company. All rights reserved.</p>
 
  </div>
