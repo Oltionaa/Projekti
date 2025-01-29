@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Kontrolloni nëse përdoruesi është admin
 $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
 ?>
 
@@ -20,16 +19,15 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
       
   <div class="navbar">
       <div class="Logo">
-          <img src="logo.png"alt ="Company Logo">
+          <img src="fotot/logo.png"alt ="Company Logo">
       </div>
-      <a href="home.html">Home</a>
-      <a href="aboutus.html">About us</a>
-      <a href="our.html">Our Services</a>
-      <a href="offers.html">Offers</a>
-      <a href="footer.html">Contact us</a>
+      <a href="home.php">Home</a>
+      <a href="aboutus.php">About us</a>
+      <a href="our.php">Our Services</a>
+      <a href="offers.php">Offers</a>
+      <a href="footer.php">Contact us</a>
       <a href="signinn.html">Sign in</a>
   </div>
-
   <div class="container">
       <div class="left-section">
         <h1>Find your Escape</h1>
@@ -305,7 +303,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
        
       <div class="card">
         <div class="card-image">
-          <img src="vprague.jpg" alt="Prague">
+          <img src="fotot/prague.jpg" alt="Prague">
         </div>
         <div class="card-content">
           <h3 class="card-title">Prague</h3>
