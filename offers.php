@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet"  href="offers.css">
+    <link rel ="stylesheet"  href="home.css">
 </head>
 <body>
+  <?php include('navbar.php'); ?>
   <div class="section-container-s">
 <h1>Exclusive Offers Just for You</h1>
 <div class="cards-container">

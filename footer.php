@@ -3,13 +3,10 @@
 
 <head>
     <link rel="stylesheet" href="footer.css"/>
+    <link rel ="stylesheet"  href="home.css">
 </head>
-    <body>
-
-
-    </div>
-</section>
-
+<body>
+  <?php include('navbar.php'); ?>
 <section id="footer">
  <img src="f.png" class="footer-img">
  <div class="title-text">
@@ -37,10 +34,6 @@
 
  </div>
 </section>
-
-
-
-
-    </body>
+</body>
 </html>
 
