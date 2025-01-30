@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +36,7 @@
         <div class="card yellow">
           <div>
             <h3></h3>
-            <p><a href="offers.html">Packages</a></p>
+            <p><a href="offers.php">Packages</a></p>
           </div>
         </div>
 
@@ -72,4 +76,5 @@
           <textarea placeholder="Write something..."></textarea>
         </div>
       </div>
-      
+</body>      
+</html>

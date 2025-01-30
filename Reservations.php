@@ -1,20 +1,24 @@
 <?php
-session_start(); 
+session_start();
 
-if (!isset($_SESSION['user_id'])) {
-  die("Ju duhet te beheni log in ne menyre qe ti shihni rezervimet e juaja");
+if (!isset($_SESSION['user_id']) && !isset($_SESSION['admin_id'])) {
+    die("Ju duhet të bëheni log in në mënyrë që t’i shihni rezervimet e juaja.");
 }
 
-$user_id = $_SESSION['user_id'];  
+$user_id = $_SESSION['user_id'] ?? null;
+$admin_id = $_SESSION['admin_id'] ?? null;
 
 include_once 'userRepository.php';  
-
 $userRepository = new UserRepository();
 
-$reservations = $userRepository->getUserReservations($user_id);
-
+if ($user_id) {
+    $reservations = $userRepository->getUserReservations($user_id);
+} elseif ($admin_id) {
+    $reservations = $userRepository->getAllReservations(); 
+}
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
