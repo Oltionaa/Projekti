@@ -2,7 +2,7 @@
 session_start(); 
 
 if (!isset($_SESSION['user_id'])) {
-  die("You must be logged in to view your reservations.");
+  die("Ju duhet te beheni log in ne menyre qe ti shihni rezervimet e juaja");
 }
 
 $user_id = $_SESSION['user_id'];  

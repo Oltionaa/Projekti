@@ -8,20 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $connection = $db->getConnection();
     $user = new User($connection);
 
-    $name = $_POST['name'];
-    
-    $password = $_POST['password'];
+    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
-   
     if ($user->login($name, $password)) {
         $_SESSION['name'] = $name;
-        $_SESSION['user_id'] = $user->getUserId($name);  
-        $_SESSION['role'] = $user->getUserRole($name);  
+        $_SESSION['user_id'] = $user->getUserId($name);
+        $_SESSION['role'] = $user->getUserRole($name);
 
         header("Location: home.php");
-        exit; 
+        exit;
     } else {
-      
         header("Location: signinn.html");
         exit;
     }
@@ -47,9 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1 id="title">Log In</h1>
 
             <form id="login-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-            <form id="login-form" action="login.php" method="POST">
-
-
                 <div class="field">
                     <div class="input-field name-field">
                         <input type="text"  name="name" placeholder="Name" class="name" />
@@ -66,7 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>
                         <input type="checkbox" name="remember_me"> Remember Me
                     </label>
-                    <a href="/forgot-password">Forgot Password?</a>
                 </div>
                 <div class="button">
                     <input type="submit" id="submit-btn" value="Log In" />

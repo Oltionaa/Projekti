@@ -345,7 +345,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] == 'admin';
             <input type="hidden" name="price" value="190">
             <button type="submit" class="card-button">Book Now</button>
             <?php if ($isAdmin): ?>
-          <a href="dashboardadmin.php.php" class="edit-button">Manage</a>
+          <a href="dashboardadmin.php" class="edit-button">Manage</a>
         <?php endif; ?>
         </form>
         </div>
