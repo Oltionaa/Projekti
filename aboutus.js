@@ -1,10 +1,10 @@
 var foto = [
-    "foto1.jpg",
-    "foto2.png",
-    "foto3.jpg",
-    "foto4.jpg",
-    "foto5.jpg",
-    "foto6.jpg",
+    "fotot/foto1.jpg",
+    "fotot/foto2.png",
+    "fotot/foto3.jpg",
+    "fotot/foto4.jpg",
+    "fotot/foto5.jpg",
+    "fotot/foto6.jpg",
 ];
 
 var captions = [
