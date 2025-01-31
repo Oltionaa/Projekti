@@ -3,21 +3,9 @@ session_start();
 
 
 
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-header("Expires: 0");
+
+
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +42,7 @@ header("Expires: 0");
         <div class="card yellow">
           <div>
             <h3></h3>
-            <p><a href="offers.html">Packages</a></p>
+            <p><a href="offers.php">Packages</a></p>
           </div>
         </div>
 
@@ -94,4 +82,5 @@ header("Expires: 0");
           <textarea placeholder="Write something..."></textarea>
         </div>
       </div>
-      
+</body>      
+</html>
