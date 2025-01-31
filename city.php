@@ -14,7 +14,7 @@
         <div class="cards-container">
             <div class="card">
                 <div class="card-image">
-                    <img src="rio.jpg" alt="Rio de Janeiro">
+                    <img src="fotot/rio.jpg" alt="Rio de Janeiro">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Rio de Janeiro</h3>
@@ -34,7 +34,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="new.jpg" alt="New York City">
+                    <img src="fotot/new.jpg" alt="New York City">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">New York City</h3>
@@ -53,7 +53,7 @@
 
             <div class="card">
                 <div class="card-image">
-                    <img src="lisbon.png" alt="Lisbon">
+                    <img src="fotot/lisbon.png" alt="Lisbon">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Lisbon</h3>
@@ -71,7 +71,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="dubai.jpg" alt="Dubai">
+                    <img src="fotot/dubai.jpg" alt="Dubai">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">Dubai</h3>

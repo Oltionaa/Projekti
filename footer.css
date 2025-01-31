@@ -49,6 +49,15 @@
 .title-text {
   text-align: center;
 }
+.footer-right a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
 
 .social img {
   height: 40px;

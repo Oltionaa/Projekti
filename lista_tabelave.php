@@ -1,56 +1,31 @@
 <?php
+include "Database.php";  
+include "useriri.php";   
+$db = $database->getConnection();
+$user = new Userii($db);  
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekti";
+$users = $user->getUsers();
 
+echo "<h2>Lista e përdoruesve</h2>";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Lidhja dështoi: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM userss";
-$result = $conn->query($sql);
-
-echo "<h2>Lista e userit te krijuar </h2>";
-if ($result->num_rows > 0) {
+if (!empty($users)) {
     echo "<table border='1'>
             <tr>
                 <th>ID</th>
                 <th>Emri</th>
-                   <th>Email</th>
-                <th>Password</th>
+                <th>Email</th>
                 <th>Role</th>
-
-               
-                
-
             </tr>";
-    while ($row = $result->fetch_assoc()) {
+    foreach ($users as $row) {
         echo "<tr>
-                <td>" . $row['id'] . "</td>
-
-                <td>" . $row['name'] . "</td>
-                <td>" . $row['email'] . "</td>
-                <td>" . $row['password'] . "</td>
-                 <td>" . $row['role'] . "</td>
-
-               
-               
-
+                <td>{$row['id']}</td>
+                <td>{$row['name']}</td>
+                <td>{$row['email']}</td>
+                <td>{$row['role']}</td>
               </tr>";
     }
     echo "</table>";
 } else {
-    echo "Nuk ka user.";
+    echo "Nuk ka asnjë përdorues.";
 }
-
-
-
-
-
 ?>

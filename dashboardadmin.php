@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +37,8 @@
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="logout.php">Logout</a></li>
+          <li><a href="shfaq.php">Messages</a></li>
+          <li><a href="logoutadmin.php">Logout</a></li>
         </ul>
       </nav>
     </aside>

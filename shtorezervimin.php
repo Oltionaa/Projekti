@@ -1,3 +1,25 @@
+<?php
+include "Database.php";
+include "Rezervimiri.php";  
+
+$database = new Database();
+$db = $database->getConnection();
+$reservation = new Reservation($db);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_name = $_POST['user_name'] ?? '';
+    $package_name = $_POST['package_name'] ?? '';
+    $price = $_POST['price'] ?? '';
+    $reservation_date = $_POST['reservation_date'] ?? '';
+
+    if ($reservation->createReservation($user_name, $package_name, $price, $reservation_date)) {
+        echo "Rezervimi u shtua me sukses! <a href='listatabelave.php'>Shiko rezervimet</a>";
+    } else {
+        echo "Gabim gjatë shtimit të rezervimit.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
