@@ -31,7 +31,7 @@ header("Expires: 0");
         <ul>
           <li><a href="#">Dashboard</a></li>
           <li><a href="shfaq.php">Messages</a></li>
-          <li><a href="logoutadmin.php">Logout</a></li>
+          <li><a href="logout.php">Logout</a></li>
         </ul>
       </nav>
     </aside>
