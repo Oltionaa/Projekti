@@ -103,3 +103,65 @@ body {
 .adventure-card h3 {
     margin-bottom: 10px;
 }
+
+
+/* Për ekrane të vogla (nën 768px) */
+@media (max-width: 767px) {
+    body {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .gallery-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .scroll-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .adventure-cards {
+        flex-direction: column; 
+    }
+
+    .adventure-card {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .adventure-section h2 {
+        font-size: 24px; 
+    }
+}
+
+/* Për tableta (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery-container {
+        width: 80%;
+    }
+
+    .image-card {
+        width: calc(50% - 20px); 
+        margin: 10px;
+    }
+
+    .adventure-cards {
+        flex-direction: row; 
+    }
+
+    .adventure-card {
+        width: 45%;
+    }
+
+    .adventure-section h2 {
+        font-size: 26px;
+    }
+}

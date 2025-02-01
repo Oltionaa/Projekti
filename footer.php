@@ -23,6 +23,7 @@
      <h1>Get In Touch</h1>
      <p>Email: boundlesstravel@gmail.com</p>
      <p>Tel:+383 44/123-456</p>
+     <p><a href="contactus.php">Click here to contact us</a></p>
    </div>
  </div>
 

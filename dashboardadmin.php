@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+<<<<<<< HEAD
 if (!isset($_SESSION['admin_id'])) {
   die("Ju duhet të bëheni log in për të hyr ne dashboard");
 }
@@ -8,6 +9,11 @@ if (!isset($_SESSION['admin_id'])) {
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Pragma: no-cache");
 header("Expires: 0");
+=======
+
+
+
+>>>>>>> 2f565dd15187fabdf9f8785312e88c5c3a590673
 
 ?>
 
@@ -29,7 +35,8 @@ header("Expires: 0");
       <nav class="sidebar-nav">
         <ul>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="logout.php">Logout</a></li>
+          <li><a href="shfaq.php">Messages</a></li>
+          <li><a href="logoutadmin.php">Logout</a></li>
         </ul>
       </nav>
     </aside>

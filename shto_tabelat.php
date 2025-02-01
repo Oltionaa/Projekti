@@ -1,47 +1,24 @@
 <?php
+include "Database.php";
+include "useriri.php"; // Sigurohu që ky skedar ekziston në të njëjtin folder
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekti";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Lidhja dështoi: " . $conn->connect_error);
-}
+$database = new Database();
+$db = $database->getConnection();
+$user = new Userii($db); // Përdor emrin e saktë të klasës
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['Password'];
+    $password = $_POST['password'] ?? '';// Sigurohu që në formular është "password"
     $role = $_POST['role'];
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    if ($user->createUser($name, $email, $password, $role)) {
+        echo "<div style='padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin: 10px 0;'>
+        Useri u shtua me sukses! <a href='lista_tabelave.php' style='color: #155724; font-weight: bold;'>Shiko listën</a>
+      </div>";
 
-    $stmt = $conn->prepare("INSERT INTO userss (name, email,Password, role) VALUES ( ?, ?, ?,?)");
-    if (!$stmt) {
-        die("Gabim në deklaratën SQL: " . $conn->error);
-    }
-    $stmt->bind_param("ssss", $name, $email, $hashedPassword, $role);
-
-    
-
-    if ($stmt->execute()) {
-        echo "Useri u shtua me sukses! <a href='lista_tabelave.php'>Shiko userin</a>";
     } else {
-        echo "Gabim: " . $stmt->error;
+        echo "<script>alert('Gabim gjatë shtimit të userit.');</script>";
     }
-
-    $stmt->close();
 }
-
-
-
-
-$conn->close();
-
 ?>
