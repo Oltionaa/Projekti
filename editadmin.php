@@ -18,7 +18,7 @@ include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
 $UserRepository = new UserRepository();
 
 
-$user = $UserRepository->getUserById($userId); /
+$user = $UserRepository->getUserById($userId); 
 
 if ($user && is_array($user)) {
   
