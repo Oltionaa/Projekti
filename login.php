@@ -12,14 +12,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
     if ($user->login($name, $password)) {
-        $_SESSION['name'] = $name;
-        $_SESSION['user_id'] = $user->getUserId($name);
-        $_SESSION['role'] = $user->getUserRole($name);
+        $_SESSION['name'] = $name;  
+        $_SESSION['user_id'] = $user->getUserId($name);  
+        $_SESSION['role'] = $user->getUserRole($name);  
 
-        header("Location: home.php");
+        if ($_SESSION['role'] === 'admin') {
+            $_SESSION['admin_id'] = $_SESSION['user_id'];  
+            header("Location: home.php");  
+        } else {
+            header("Location: home.php");  
+        }
         exit;
     } else {
-        header("Location: signinn.html");
+        header("Location: signinn.html"); 
         exit;
     }
 }

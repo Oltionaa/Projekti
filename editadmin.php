@@ -1,38 +1,46 @@
 <?php
 
+session_start();
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 if (!isset($_GET['id']) || empty($_GET['id'])) {
-    echo "Invalid user ID.";
+    echo "ID përdoruesi është e pavlefshme.";
     exit();
 }
 
-$userId = $_GET['id']; 
+$userId = $_GET['id']; // Përdorimi i ID-së së përdoruesit nga URL
 
 include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
 
 $UserRepository = new UserRepository();
 
-$user = $UserRepository->getUserByIdUpdated($userId);
+// Përdorimi i metodës getUserById për të marrë përdoruesin dhe rezervimin e tij
+$user = $UserRepository->getUserById($userId); // Merrni përdoruesin me ID
 
-
-if (!$user || !is_array($user)) {
-    echo "User not found!";
-    exit(); 
+if ($user && is_array($user)) {
+    // Këtu mund të përdorni të dhënat për të mbushur fushat e formularëve
+} else {
+    echo "Përdoruesi nuk u gjet!";
+    exit();
 }
 
 if (isset($_POST['editBtn'])) {
     $id = $_POST['id']; 
-    $package_name = htmlspecialchars(trim($_POST['package_name']));
+    $package_name = trim($_POST['package_name']);
     $price = floatval($_POST['price']);
     $reservation_date = $_POST['reservation_date'];
 
-   
+    // Përditësimi i rezervimit
     $UserRepository->updateUseri($id, $package_name, $price, $reservation_date);
 
-    
-    header("location:Dashboardadmin.php");
+    header("location: Dashboardadmin.php");
     exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,16 +55,16 @@ if (isset($_POST['editBtn'])) {
     <h3>Edit User</h3>
     <form action="" method="post">
         
-        <input type="hidden" name="id" value="<?=$user['id']?>">
+        <input type="hidden" name="id" value="<?= $user['id'] ?>">
 
         <label for="package_name">Oferta:</label>
-        <input type="text" name="package_name" value="<?=$user['package_name']?>" required> <br><br>
+        <input type="text" name="package_name" value="<?= $user['package_name'] ?>" required> <br><br>
 
         <label for="price">Cmimi:</label>
-        <input type="number" step="0.01" name="price" value="<?=$user['price']?>" required> <br><br>
+        <input type="number" step="0.01" name="price" value="<?= $user['price'] ?>" required> <br><br>
 
         <label for="reservation_date">Data:</label>
-        <input type="date" name="reservation_date" value="<?=$user['reservation_date']?>" required> <br><br>
+        <input type="date" name="reservation_date" required> <br><br>
 
         <input type="submit" name="editBtn" value="Save Changes"> <br><br>
     </form>

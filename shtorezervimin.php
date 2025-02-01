@@ -1,6 +1,33 @@
 <?php
 session_start();
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
+
+include "Database.php";
+include "Rezervimiri.php";  
+
+$database = new Database();
+$db = $database->getConnection();
+$reservation = new Reservation($db);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_name = $_POST['user_name'] ?? '';
+    $package_name = $_POST['package_name'] ?? '';
+    $price = $_POST['price'] ?? '';
+    $reservation_date = $_POST['reservation_date'] ?? '';
+
+    if ($reservation->createReservation($user_name, $package_name, $price, $reservation_date)) {
+        echo "Rezervimi u shtua me sukses! <a href='listatabelave.php'>Shiko rezervimet</a>";
+    } else {
+        echo "Gabim gjatë shtimit të rezervimit.";
+    }
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +50,8 @@ session_start();
       <input type="text" name="price" id="price" required><br><br>
 
       <label for="reservation_date">Reservation date:</label>
-      <input type="text" name="reservation_date" id="reservation_date" placeholder="YYYY-MM-DD" required><br><br>
+      <input type="date" name="reservation_date" id="reservation_date" required><br><br>
+
 
       <button type="submit">Shto Rezervimin</button>
   </form>

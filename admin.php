@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +22,6 @@ session_start();
      
         <tr>
         <th>ID</th>
-         <th>user_id</th>
          <th>user_name</th>
          <th>package_name</th>
          <th>price</th>
@@ -40,7 +44,6 @@ session_start();
             "
            <tr>
       <td>{$user['id']}</td>
-      <td>{$user['user_id']}</td>
       <td>{$user['user_name']}</td>
       <td>{$user['package_name']}</td>
       <td>{$user['price']}</td>

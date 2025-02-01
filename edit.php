@@ -1,23 +1,34 @@
 <?php
-$userId = $_GET['id'];
+session_start();
 
-include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
+include_once 'userRepository.php';
+
+if (!isset($_SESSION['name'])) {
+    die("Ju duhet të bëheni log in në mënyrë që t’i shihni rezervimet.");
+}
+
+$user_name = $_SESSION['name'];  
 
 $userRepository = new UserRepository();
-$user = $userRepository->getUserById($userId);
+
+$user = $userRepository->getUserByName($user_name);
 
 if (!$user) {
-    echo "Reservation not found!";
+    echo "Rezervimi nuk u gjet!";
     exit();
 }
 
 if (isset($_POST['editBtn'])) {
-    $id = $_POST['id'];
-    $user_name = $_POST['user_name'];
-    $reservation_date = $_POST['reservation_date'];
+    $new_user_name = $_POST['user_name']; 
+    $reservation_date = $_POST['reservation_date']; 
 
-    $userRepository->updateUser($id, $user_name, $reservation_date);
+    
+    $userRepository->updateUser($user_name, $new_user_name, $reservation_date); 
 
+    
+    $_SESSION['name'] = $new_user_name; 
+
+   
     header("location: Reservations.php");
     exit();
 }
@@ -35,7 +46,7 @@ if (isset($_POST['editBtn'])) {
 <body>
     <h3>Edit Reservation</h3>
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?=$user['id']?>"><br><br>
+        <input type="hidden" name="user_name" value="<?=$user['user_name']?>"><br><br>
         <label for="user_name">User Name:</label>
         <input type="text" name="user_name" id="user_name" value="<?=$user['user_name']?>" required><br><br>
         <label for="reservation_date">Reservation Date:</label>
