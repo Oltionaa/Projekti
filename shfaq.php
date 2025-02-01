@@ -16,7 +16,7 @@ if (count($messages) > 0) {
                 <th>ID</th>
                 <th>Emri</th>
                 <th>Email</th>
-                <th>Subjekti</th>
+                
                 <th>Mesazhi</th>
                 <th>Data</th>
             </tr>";
@@ -26,7 +26,7 @@ if (count($messages) > 0) {
                 <td>" . $row['id'] . "</td>
                 <td>" . $row['name'] . "</td>
                 <td>" . $row['email'] . "</td>
-                <td>" . $row['subject'] . "</td>
+             
                 <td>" . $row['message'] . "</td>
                 <td>" . $row['created_at'] . "</td>
               </tr>";

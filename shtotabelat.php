@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST['user_name'];
     $package_name = $_POST['package_name'];
     $price = $_POST['price'];
-    $reservation_date = $_POST['reservation_date'];  // Merr vlerën nga formulari
+    $reservation_date = $_POST['reservation_date'];  
 
     $stmt = $conn->prepare("INSERT INTO reservations (user_name, package_name, price, reservation_date) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssds", $user_name, $package_name, $price, $reservation_date);

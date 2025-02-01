@@ -23,12 +23,12 @@ class Contact {
     }
 
     public function getMessages() {
-        $sql = "SELECT * FROM contact_messages ORDER BY created_at DESC";
-        $stmt = $this->conn->prepare($sql);
+        $query = "SELECT id, name, email, message, created_at FROM contact_messages";
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
-    
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 }
 
 ?>

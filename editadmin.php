@@ -11,17 +11,17 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit();
 }
 
-$userId = $_GET['id']; // Përdorimi i ID-së së përdoruesit nga URL
+$userId = $_GET['id']; 
 
 include_once 'C:\xampp\htdocs\Projekti-1\userRepository.php';
 
 $UserRepository = new UserRepository();
 
-// Përdorimi i metodës getUserById për të marrë përdoruesin dhe rezervimin e tij
-$user = $UserRepository->getUserById($userId); // Merrni përdoruesin me ID
+
+$user = $UserRepository->getUserById($userId); /
 
 if ($user && is_array($user)) {
-    // Këtu mund të përdorni të dhënat për të mbushur fushat e formularëve
+  
 } else {
     echo "Përdoruesi nuk u gjet!";
     exit();
@@ -33,7 +33,6 @@ if (isset($_POST['editBtn'])) {
     $price = floatval($_POST['price']);
     $reservation_date = $_POST['reservation_date'];
 
-    // Përditësimi i rezervimit
     $UserRepository->updateUseri($id, $package_name, $price, $reservation_date);
 
     header("location: Dashboardadmin.php");

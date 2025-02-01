@@ -7,20 +7,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $package_name = $_POST['package_name'] ?? '';
     $price = $_POST['price'] ?? 0;
 
-    // Sigurohuni që jeni të regjistruar dhe merrni emrin e përdoruesit nga sesioni
     $user_id = $_SESSION['user_id'] ?? '';
     if (empty($user_id)) {
         echo "Ju duhet të jeni i regjistruar për të bërë rezervimin.";
         exit;
     }
 
-    // Krijo lidhjen me bazën e të dhënave
+
     $db = new Database();
     $conn = $db->getConnection();
     $user = new User($conn);
 
     try {
-        // Merr emrin e përdoruesit nga ID-ja e sesionit
         $user_name = $user->getUserName($user_id);
 
         if (!$user_name) {
@@ -28,18 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        // Përditësojmë query për të hequr 'user_id'
         $insertStmt = $conn->prepare("
             INSERT INTO reservations (package_name, price, user_name, reservation_date)
             VALUES (:package_name, :price, :user_name, NOW())
         ");
 
-        // Lidhja e parametrave për query-n
+
         $insertStmt->bindParam(':package_name', $package_name, PDO::PARAM_STR);
         $insertStmt->bindParam(':price', $price, PDO::PARAM_STR);
         $insertStmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);
 
-        // Ekzekutohet query
         $insertStmt->execute();
 
         echo "

@@ -1,7 +1,9 @@
 <?php
+
 session_start();
 include_once 'Database.php';
 include_once 'User.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
@@ -11,9 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = isset($_POST['name']) ? trim($_POST['name']) : '';
     $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
+  
+    if (!$user->userExists($name)) {
+        header("Location: signinn.html?error=no_user");
+        exit;
+    }
+
+    
     if ($user->login($name, $password)) {
         $_SESSION['name'] = $name;  
-        $_SESSION['user_id'] = $user->getUserId($name);  
+        $_SESSION['user_id'] = $user->getUserId();  
         $_SESSION['role'] = $user->getUserRole($name);  
 
         if ($_SESSION['role'] === 'admin') {
@@ -24,11 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         exit;
     } else {
-        header("Location: signinn.html"); 
+      
+        header("Location: login.php?error=1");
         exit;
     }
 }
+
 ?>
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -76,46 +91,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     
      <script>
-        document.addEventListener("DOMContentLoaded", function (ngjarja) {
-            const BtnSubmit = document.getElementById('submit-btn');
-            const loginForm = document.getElementById("login-form");
-            const nameField = document.querySelector(".name");
-            const passwordField = document.querySelector(".password");
+   document.addEventListener("DOMContentLoaded", function () {
+    const BtnSubmit = document.getElementById('submit-btn');
+    const loginForm = document.getElementById("login-form");
+    const nameField = document.querySelector(".name");
+    const passwordField = document.querySelector(".password");
+
+    // Kontrollo nëse ka gabim nga PHP dhe shfaq alert
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Gabimi për fjalëkalim të gabuar
+    if (urlParams.has("error") && urlParams.get("error") === "1") {
+        alert("Fjalëkalimi gabim! Ju lutem provoni përsëri.");
+        window.history.replaceState({}, document.title, "login.php");
+    }
+
     
-            const validate = (ngjarja) => {
-                ngjarja.preventDefault();
-    
-                if (nameField.value === "") {
-                    alert("Ju lutem shtoni emrin.");
-                    nameField.focus();
-                    return false;
-                }
+    if (urlParams.has("error") && urlParams.get("error") === "no_user") {
+        alert("Përdoruesi nuk ekziston! Ju lutem regjistrohuni.");
+        window.history.replaceState({}, document.title, "signinn.html"); 
+    }
 
-                if (passwordField.value === "") {
-                    alert("Ju lutem shtoni fjalëkalimin.");
-                    passwordField.focus();
-                    return false;
-                }
+    const validate = (event) => {
+        event.preventDefault();
 
-                if (!passwordValid(passwordField.value)) {
-                    alert("Fjalëkalimi duhet të ketë të paktën 8 karaktere dhe të përmbajë numra dhe simbole.");
-                    passwordField.focus();
-                    return false;
-                }
+        if (nameField.value === "") {
+            alert("Ju lutem shtoni emrin.");
+            nameField.focus();
+            return false;
+        }
 
-                alert("Log in me sukses!");
-                loginForm.submit(); 
-            };
-    
-            
-            const passwordValid = (password) => {
-                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-                return passwordRegex.test(password); 
+        if (passwordField.value === "") {
+            alert("Ju lutem shtoni fjalëkalimin.");
+            passwordField.focus();
+            return false;
+        }
 
-            };
+        if (!passwordValid(passwordField.value)) {
+            alert("Fjalëkalimi duhet të ketë të paktën 8 karaktere dhe të përmbajë numra dhe simbole.");
+            passwordField.focus();
+            return false;
+        }
 
+        loginForm.submit(); 
+    };
 
-            BtnSubmit.addEventListener('click', validate);
-        });
+    const passwordValid = (password) => {
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        return passwordRegex.test(password);
+    };
+
+    BtnSubmit.addEventListener('click', validate);
+});
+
     </script>
-</body>
+</body> 
+</html>

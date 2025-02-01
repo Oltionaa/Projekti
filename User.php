@@ -21,7 +21,15 @@ class User {
             return true;
         }
     }
-
+    public function userExists($name) {
+        $query = "SELECT COUNT(*) FROM {$this->table_name} WHERE name = :name";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':name', $name);
+        $stmt->execute();
+    
+        return $stmt->fetchColumn() > 0;
+    }
+    
     public function login($name, $password) {
         $query = "SELECT id, name, password FROM {$this->table_name} WHERE name = :name";
         $stmt = $this->conn->prepare($query);
