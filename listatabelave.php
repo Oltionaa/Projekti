@@ -32,8 +32,4 @@ if ($reservations->rowCount() > 0) {
 } else {
     echo "Nuk ka rezervime.";
 }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 2f565dd15187fabdf9f8785312e88c5c3a590673

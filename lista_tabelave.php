@@ -2,11 +2,11 @@
 include "Database.php";  
 include "useriri.php";   
 
-// Assuming that the Database class has been defined in Database.php
-$database = new Database();  // Instantiate the Database class
-$db = $database->getConnection();  // Now you can call getConnection()
 
-// Proceed with user interaction
+$database = new Database();  
+$db = $database->getConnection();  
+
+
 $user = new Userii($db);  
 
 $users = $user->getUsers();

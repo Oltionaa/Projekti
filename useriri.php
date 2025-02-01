@@ -2,13 +2,12 @@
 
 class Userii {
     private $conn;
-    private $table = "userss"; // Emri i tabelës në databazë
+    private $table = "userss"; 
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
-    // Funksioni për të shtuar një përdorues të ri
     public function createUser($name, $email, $password, $role) {
         try {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -26,7 +25,7 @@ class Userii {
         }
     }
 
-    // Funksioni për të marrë të gjithë përdoruesit
+    
     public function getUsers() {
         $sql = "SELECT id, name, email, role FROM " . $this->table;
         $stmt = $this->conn->prepare($sql);

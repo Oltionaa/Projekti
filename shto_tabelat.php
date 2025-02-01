@@ -1,15 +1,15 @@
 <?php
 include "Database.php";
-include "useriri.php"; // Sigurohu që ky skedar ekziston në të njëjtin folder
+include "useriri.php"; 
 
 $database = new Database();
 $db = $database->getConnection();
-$user = new Userii($db); // Përdor emrin e saktë të klasës
+$user = new Userii($db); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password'] ?? '';// Sigurohu që në formular është "password"
+    $password = $_POST['password'] ?? '';
     $role = $_POST['role'];
 
     if ($user->createUser($name, $email, $password, $role)) {

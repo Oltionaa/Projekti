@@ -10,7 +10,7 @@ $messages = $contact->getMessages();
 
 echo "<h2>Mesazhet e Kontaktit</h2>";
 
-if (count($messages) > 0) {  // Kontrollo nëse ka mesazhe
+if (count($messages) > 0) { 
     echo "<table border='1'>
             <tr>
                 <th>ID</th>
